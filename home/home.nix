@@ -20,6 +20,10 @@ in
   	source = ./hypr;
 	recursive = true;
   };
+  home.file.".config/waybar" = {
+  	source = ./waybar;
+	recursive = true;
+  };
   home.file.".config/mako" = {
   	source = ./mako;
 	recursive = true;
