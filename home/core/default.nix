@@ -6,6 +6,12 @@
     source = ./tmux.conf;
   };
 
+  home.file.".config/nvim" = {
+    enable = true;
+    recursive = true;
+    source = ./nvim;
+  };
+
   home.packages = with pkgs; [ vifm nnn tldr btop fd ];
 
 }

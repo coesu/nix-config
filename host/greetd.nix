@@ -1,18 +1,12 @@
 { pkgs, ... }: {
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session.command = ''
-        ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --time \
-          --asterisks \
-          --user-menu \
-          --cmd sway
-      '';
+services.greetd = {
+  enable = true;
+  settings = rec {
+    initial_session = {
+      command = "${pkgs.sway}/bin/sway";
+      user = "lars";
     };
+    default_session = initial_session;
   };
-
-  environment.etc."greetd/environments".text = ''
-    sway
-  '';
+};
 }

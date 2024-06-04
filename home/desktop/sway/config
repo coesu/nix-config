@@ -24,7 +24,7 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-output * bg /home/lars/nixos/home/wallpaper.jpg fill
+output * bg /home/lars/nix-config/home/wallpaper.jpg fill
 #
 # Example configuration:
 #

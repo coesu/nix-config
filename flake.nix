@@ -17,7 +17,7 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
 
-    nixosConfigurations.nixl = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.aion = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [

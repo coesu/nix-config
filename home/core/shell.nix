@@ -22,7 +22,7 @@ let
 
     drag = "xdragon -a -x";
 
-    update = "sudo nixos-rebuild switch --flake /home/lars/nixos";
+    update = "sudo nixos-rebuild switch --flake /home/lars/nix-config";
   };
 in {
   programs.zsh = {
