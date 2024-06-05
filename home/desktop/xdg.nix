@@ -33,7 +33,7 @@
         ];
       in {
         "application/json" = browser;
-        "application/pdf" = browser; # TODO: pdf viewer
+        "application/pdf" = "org.pwmt.zathura.desktop";
 
         "text/html" = browser;
         "text/xml" = browser;
@@ -82,12 +82,12 @@
       };
     };
 
-    userDirs = {
-      enable = true;
-      createDirectories = true;
-      extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
-      };
-    };
+    # userDirs = {
+    #   enable = true;
+    #   createDirectories = false;
+    #   extraConfig = {
+    #     XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+    #   };
+    # };
   };
 }

@@ -13,6 +13,10 @@
     };
     stylix = { url = "github:danth/stylix"; };
     nix-colors.url = "github:misterio77/nix-colors";
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {

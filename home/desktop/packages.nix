@@ -12,9 +12,8 @@
 
     chromium
     firefox
+    discord-screenaudio
 
-    xfce.thunar
-    xfce.thunar-volman
     waybar
     playerctl
     pamixer

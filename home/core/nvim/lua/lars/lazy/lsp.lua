@@ -52,6 +52,7 @@ return {
 
         local servers = {
             pyright = {},
+            jedi_language_server = {},
             lua_ls = {
                 settings = {
                     Lua = {
@@ -64,7 +65,7 @@ return {
         }
         local lspconfig = require("lspconfig")
         for server, opts in pairs(servers) do
-            lspconfig[server].setup(opts)
+            lspconfig[server].setup({capabilities = capabilities,})
         end
 
         -- require("mason").setup()

@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
 
-  imports = [ ./packages.nix ./gtk.nix ./xdg.nix ];
+  imports = [ ./packages.nix ./gtk.nix ./xdg.nix inputs.anyrun.homeManagerModules.default ./anyrun.nix ];
 
   home.file.".config/sway" = {
     enable = true;
@@ -27,6 +27,11 @@
     source = ./zathura;
     recursive = true;
   };
+  home.file.".config/swappy" = {
+    enable = true;
+    source = ./swappy;
+    recursive = true;
+  };
 
   programs.alacritty = {
     enable = true;
@@ -38,7 +43,6 @@
   wayland.windowManager.sway.enable = true;
 
   services = {
-
     mako = {
       enable = true;
       defaultTimeout = 5000;

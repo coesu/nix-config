@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 read -p "Translate from German to English (g) or from English to German (e)? " direction
 read -p "What should I translate? " text
