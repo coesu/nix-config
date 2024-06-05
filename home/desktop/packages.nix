@@ -20,6 +20,7 @@
     wofi
     wl-clipboard
     imv
+    mpv
     networkmanagerapplet
     swappy
     grim
