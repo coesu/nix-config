@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   aliases = {
     ls = "eza";
@@ -24,7 +29,8 @@ let
 
     update = "sudo nixos-rebuild switch --flake /home/lars/nix-config";
   };
-in {
+in
+{
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -56,7 +62,9 @@ in {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = { add_newline = false; };
+    settings = {
+      add_newline = false;
+    };
   };
 
   programs.direnv = {
@@ -64,5 +72,4 @@ in {
     enableZshIntegration = true; # see note on other shells below
     nix-direnv.enable = true;
   };
-
 }

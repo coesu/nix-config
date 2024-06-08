@@ -1,6 +1,18 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
 
-  imports = [ ./packages.nix ./gtk.nix ./xdg.nix inputs.anyrun.homeManagerModules.default ./anyrun.nix ];
+  imports = [
+    ./packages.nix
+    ./gtk.nix
+    ./xdg.nix
+    inputs.anyrun.homeManagerModules.default
+    ./anyrun.nix
+  ];
 
   home.file.".config/sway" = {
     enable = true;
@@ -35,7 +47,9 @@
 
   programs.alacritty = {
     enable = true;
-    settings = { env.TERM = "xterm-256color"; };
+    settings = {
+      env.TERM = "xterm-256color";
+    };
   };
   programs.foot.enable = true;
 
@@ -48,7 +62,9 @@
       defaultTimeout = 5000;
     };
     # Keyring
-    gnome-keyring = { enable = true; };
+    gnome-keyring = {
+      enable = true;
+    };
 
     # Applets, shown in tray
     # Networking
@@ -56,7 +72,6 @@
 
     # Bluetooth
     blueman-applet.enable = true;
-
   };
 
   #  systemd.user = {

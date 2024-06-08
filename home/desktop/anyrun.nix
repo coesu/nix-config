@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   programs.anyrun = {
     enable = true;
     config = {
@@ -12,8 +13,12 @@
         dictionary
         kidex
       ];
-      x = { fraction = 0.5; };
-      y = { fraction = 0.3; };
+      x = {
+        fraction = 0.5;
+      };
+      y = {
+        fraction = 0.3;
+      };
       width.fraction = 0.3;
       layer = "overlay";
       hidePluginInfo = true;

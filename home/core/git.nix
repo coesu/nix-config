@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
@@ -23,6 +29,9 @@
     # };
     # enable git Large File Storage: https://git-lfs.com/
     # lfs.enable = true;
-    ignores = [ ".direnv" "result" ];
+    ignores = [
+      ".direnv"
+      "result"
+    ];
   };
 }

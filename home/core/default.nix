@@ -1,5 +1,17 @@
-{ config, lib, pkgs, outputs, ... }: {
-  imports = [ ./bat.nix ./git.nix ./shell.nix ./zoxide.nix ];
+{
+  config,
+  lib,
+  pkgs,
+  outputs,
+  ...
+}:
+{
+  imports = [
+    ./bat.nix
+    ./git.nix
+    ./shell.nix
+    ./zoxide.nix
+  ];
 
   home.file.".tmux.conf" = {
     enable = true;
@@ -12,6 +24,11 @@
     source = ./nvim;
   };
 
-  home.packages = with pkgs; [ vifm nnn tldr btop fd ];
-
+  home.packages = with pkgs; [
+    vifm
+    nnn
+    tldr
+    btop
+    fd
+  ];
 }

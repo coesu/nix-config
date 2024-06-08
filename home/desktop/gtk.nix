@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 # let gruvboxPlus = import ./gruvbox-plus.nix { inherit pkgs; };
 # in {
 #
@@ -12,10 +17,9 @@
 #   };
 # }
 {
-    gtk = {
-        enable = true;
-        iconTheme.package = pkgs.gruvbox-plus-icons;
-        iconTheme.name = "Gruvbox-Plus-Dark";
-    };
+  gtk = {
+    enable = true;
+    iconTheme.package = pkgs.gruvbox-plus-icons;
+    iconTheme.name = "Gruvbox-Plus-Dark";
+  };
 }
-

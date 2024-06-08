@@ -1,7 +1,18 @@
-{ config, inputs, lib, pkgs, outputs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  outputs,
+  ...
+}:
 
 {
-  imports = [ ./desktop ./browser ./core ];
+  imports = [
+    ./desktop
+    ./browser
+    ./core
+  ];
   home.username = "lars";
   home.homeDirectory = "/home/lars";
 

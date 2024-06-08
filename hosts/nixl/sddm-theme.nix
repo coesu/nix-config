@@ -26,4 +26,3 @@ pkgs.stdenv.mkDerivation {
     echo "ForceHideCompletePassword=true" >> theme.conf
   '';
 }
-
