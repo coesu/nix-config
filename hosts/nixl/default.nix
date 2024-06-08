@@ -1,4 +1,4 @@
 { config, pkgs, ... }
 {
-    imports = [ ./../configuration.nix ./hardware-configuration.nix];
+    imports = [ ../configuration.nix ./sddm.nix ./hardware-configuration.nix];
 }
