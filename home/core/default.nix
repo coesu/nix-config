@@ -4,7 +4,8 @@
   pkgs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     ./bat.nix
     ./git.nix
@@ -23,11 +24,11 @@
     source = ./nvim;
   };
 
+  programs.btop.enable = true;
   home.packages = with pkgs; [
     vifm
     nnn
     tldr
-    btop
     fd
   ];
 }

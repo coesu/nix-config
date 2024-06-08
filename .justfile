@@ -1,3 +1,5 @@
+os:
+    sudo nixos-rebuild switch --flake .
 up:
     nix flake update
 # Update specific input

@@ -6,7 +6,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Include the results of the hardware scan.
     # ./greetd.nix
@@ -26,9 +27,9 @@
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -65,7 +66,7 @@
 
   stylix.fonts = {
     monospace = {
-      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
       name = "JetBrainsMono Nerd Font Mono";
     };
     sansSerif = {
@@ -110,9 +111,11 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = ["amdgpu"];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   programs.nix-ld.enable = true;
+
+  programs.nh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lars = {
@@ -145,9 +148,10 @@
     ripgrep
     clang
     pavucontrol
-    btop
     tldr
     gparted
+    nix-output-monitor
+    nvd
   ];
 
   nix.settings.experimental-features = [
@@ -156,7 +160,7 @@
   ];
   nixpkgs.config.allowUnfree = true;
   environment.variables.EDITOR = "nvim";
-  environment.pathsToLink = ["/share/zsh"];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

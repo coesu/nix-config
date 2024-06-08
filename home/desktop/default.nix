@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./packages.nix
     ./gtk.nix
@@ -32,11 +33,11 @@
     source = ./waybar;
     recursive = true;
   };
-  home.file.".config/zathura" = {
-    enable = true;
-    source = ./zathura;
-    recursive = true;
-  };
+  # home.file.".config/zathura" = {
+  #   enable = true;
+  #   source = ./zathura;
+  #   recursive = true;
+  # };
   home.file.".config/swappy" = {
     enable = true;
     source = ./swappy;
@@ -50,6 +51,10 @@
     };
   };
   programs.foot.enable = true;
+  programs.zathura.enable = true;
+  programs.yazi.enable = true;
+  programs.sioyek.enable = true;
+  programs.ncspot.enable = true;
 
   programs.waybar.enable = true;
   wayland.windowManager.sway.enable = true;
