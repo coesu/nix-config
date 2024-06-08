@@ -3,8 +3,7 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   aliases = {
     ls = "eza";
     l = "eza -l";
@@ -29,8 +28,7 @@ let
 
     update = "sudo nixos-rebuild switch --flake /home/lars/nix-config";
   };
-in
-{
+in {
   programs.zsh = {
     enable = true;
     autocd = true;

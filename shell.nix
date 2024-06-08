@@ -1,4 +1,6 @@
-{ pkgs ? # If pkgs is not defined, instantiate nixpkgs from locked commit
+{
+  pkgs ?
+  # If pkgs is not defined, instantiate nixpkgs from locked commit
   let
     lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.nixpkgs.locked;
     nixpkgs = fetchTarball {
@@ -6,27 +8,30 @@
       sha256 = lock.narHash;
     };
   in
-  import nixpkgs { overlays = [ ]; }
-, ...
+    import nixpkgs {overlays = [];},
+  ...
 }: {
   default = pkgs.mkShell {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
     nativeBuildInputs = builtins.attrValues {
-      inherit (pkgs)
+      inherit
+        (pkgs)
         # Required for pre-commit hook 'nixpkgs-fmt' only on Darwin
+        
         # REF: <https://discourse.nixos.org/t/nix-shell-rust-hello-world-ld-linkage-issue/17381/4>
+        
         libiconv
-
         nix
         nixfmt-rfc-style
         home-manager
         git
         just
         pre-commit
-
+        rsync
         age
         ssh-to-age
-        sops;
+        sops
+        ;
     };
   };
 }

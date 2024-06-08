@@ -5,9 +5,7 @@
   pkgs,
   outputs,
   ...
-}:
-
-{
+}: {
   imports = [
     ./desktop
     ./browser

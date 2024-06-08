@@ -3,9 +3,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
-
+}: {
   imports = [
     ./packages.nix
     ./gtk.nix
