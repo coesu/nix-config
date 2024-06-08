@@ -28,7 +28,20 @@
       home-manager,
       ...
     }:
+    let
+      forAllSystems = nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        #"aarch64-darwin"
+      ];
+    in
     {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./shell.nix { inherit pkgs; }
+      );
 
       nixosConfigurations.aion = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
