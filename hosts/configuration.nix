@@ -41,7 +41,6 @@
 
   programs.zsh.enable = true;
 
-  programs.hyprland.enable = true;
   programs.sway.enable = true;
   xdg = {
     portal = {

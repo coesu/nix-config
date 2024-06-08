@@ -29,7 +29,7 @@ fmt:
 
 nvim-test:
   rm -rf /home/lars/.config/nvim
-  rsync -avz --copy-links --chmod=D2755,F744 ./home/core/nvim/"
+  rsync -avz home/core/nvim /home/lars/.config/
 
 nvim-clean:
   rm -rf /home/lars/.config/nvim
