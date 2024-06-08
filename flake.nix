@@ -25,12 +25,30 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./host/configuration.nix
+        ./hosts/aion/
         inputs.stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+home-manager.backupFileExtension = "backup";
+
+          home-manager.users.lars = import ./home;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ];
+    };
+    nixosConfigurations.nixl = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./hosts/nixl/
+        inputs.stylix.nixosModules.stylix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+home-manager.backupFileExtension = "backup";
 
           home-manager.users.lars = import ./home;
           home-manager.extraSpecialArgs = { inherit inputs; };

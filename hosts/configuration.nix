@@ -6,7 +6,6 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ./greetd.nix
   ];
 
@@ -14,7 +13,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "aion";
+  networking.hostName = "nixl";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
