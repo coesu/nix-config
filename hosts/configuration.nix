@@ -17,17 +17,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixl";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  security.polkit.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
-      enable = true;
       description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "default.target" ];
+      wants = [ "default.target" ];
+      after = [ "default.target" ];
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -50,9 +52,10 @@
       ];
     };
   };
+
   services.gnome.gnome-keyring.enable = true;
-  security.polkit.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
+
   services.gvfs.enable = true;
 
   stylix.image = ./../home/wallpaper.jpg;
