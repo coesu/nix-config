@@ -4,8 +4,7 @@
   pkgs,
   outputs,
   ...
-}:
-{
+}: {
   imports = [
     ./bat.nix
     ./git.nix
