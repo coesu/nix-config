@@ -248,5 +248,6 @@ client.urgent           $bg-urgent    $bg-urgent   $text          $bar $bar
 assign [app_id="com.nextcloud.desktopclient.nextcloud"] workspace 9
 assign [app_id="thunderbird"] workspace 5
 
+exec --no-startup-id lxqt-policykit-agent
 
 include /etc/sway/config.d/*

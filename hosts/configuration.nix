@@ -24,25 +24,26 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   security.polkit.enable = true;
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "default.target" ];
-      wants = [ "default.target" ];
-      after = [ "default.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
+
+  # systemd = {
+  #   user.services.polkit-gnome-authentication-agent-1 = {
+  #     description = "polkit-gnome-authentication-agent-1";
+  #     serviceConfig = {
+  #       Type = "simple";
+  #       # ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+  #       ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
+  #       Restart = "on-failure";
+  #       RestartSec = 1;
+  #       TimeoutStopSec = 10;
+  #     };
+  #   };
+  # };
 
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
+  programs.sway.wrapperFeatures.gtk = true;
+
   xdg = {
     portal = {
       enable = true;
@@ -153,6 +154,7 @@
     gparted
     nix-output-monitor
     nvd
+    lxqt.lxqt-policykit
   ];
 
   nix.settings.experimental-features = [

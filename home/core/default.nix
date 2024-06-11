@@ -4,7 +4,8 @@
   pkgs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     ./bat.nix
     ./git.nix
@@ -29,5 +30,12 @@
     nnn
     tldr
     fd
+
+    isort
+    python312Packages.jedi-language-server
+
+    lua-language-server
+    ruff
+    stylua
   ];
 }
