@@ -5,12 +5,15 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
   imports = [
     # Include the results of the hardware scan.
     # ./greetd.nix
+    inputs.xremap-flake.nixosModules.default
+
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -59,6 +62,20 @@
 
   services.gvfs.enable = true;
 
+  services.xremap = {
+    withWlroots = true;
+    userName = "lars";
+    config = {
+      keymap = [
+        {
+          name = "main remaps";
+          remap.super-y.launch = [ "${lib.meta.getExe pkgs.alacritty}" ];
+        }
+      ];
+    };
+  };
+
+  stylix.enable = true;
   stylix.image = ./../home/wallpaper.jpg;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
