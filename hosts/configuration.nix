@@ -7,13 +7,11 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     # ./greetd.nix
     inputs.xremap-flake.nixosModules.default
-
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -45,6 +43,7 @@
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
+  programs.hyprland.enable = true;
   programs.sway.wrapperFeatures.gtk = true;
 
   xdg = {
@@ -69,7 +68,7 @@
       keymap = [
         {
           name = "main remaps";
-          remap.super-y.launch = [ "${lib.meta.getExe pkgs.alacritty}" ];
+          remap.super-y.launch = ["${lib.meta.getExe pkgs.alacritty}"];
         }
       ];
     };
@@ -85,7 +84,7 @@
 
   stylix.fonts = {
     monospace = {
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
       name = "JetBrainsMono Nerd Font Mono";
     };
     sansSerif = {
@@ -125,12 +124,10 @@
     # media-session.enable = true;
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   programs.nix-ld.enable = true;
 
@@ -180,7 +177,7 @@
   ];
   nixpkgs.config.allowUnfree = true;
   environment.variables.EDITOR = "nvim";
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = ["/share/zsh"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
