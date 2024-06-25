@@ -15,6 +15,7 @@
     chromium
     firefox
     discord-screenaudio
+    signal-desktop
 
     waybar
     playerctl

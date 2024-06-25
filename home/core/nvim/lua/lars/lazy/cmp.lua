@@ -5,9 +5,9 @@ return { -- Autocompletion
 		-- Snippet Engine & its associated nvim-cmp source
 		{
 			"L3MON4D3/LuaSnip",
-			-- build = (function()
-			-- 	return "make install_jsregexp"
-			-- end)(),
+			build = (function()
+				return "make install_jsregexp"
+			end)(),
 			dependencies = {
 				-- `friendly-snippets` contains a variety of premade snippets.
 				--    See the README about individual language/framework/plugin snippets:

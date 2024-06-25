@@ -25,15 +25,16 @@
 
   programs.btop.enable = true;
   home.packages = with pkgs; [
-    vifm
-    nnn
     tldr
     fd
 
+    tree-sitter
+    nodejs
     isort
     python312Packages.jedi-language-server
-
+    alejandra
     lua-language-server
+    luajitPackages.jsregexp
     ruff
     stylua
   ];
