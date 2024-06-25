@@ -1,8 +1,8 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- "williamboman/mason.nvim",
-		-- "williamboman/mason-lspconfig.nvim",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 		-- "hrsh7th/cmp-nvim-lsp",
 		-- "hrsh7th/cmp-buffer",
 		-- "hrsh7th/cmp-path",
@@ -63,57 +63,56 @@ return {
 				},
 			},
 		}
-		local lspconfig = require("lspconfig")
-		for server, opts in pairs(servers) do
-			lspconfig[server].setup({ capabilities = capabilities })
-		end
+		-- local lspconfig = require("lspconfig")
+		-- for server, opts in pairs(servers) do
+		-- 	lspconfig[server].setup({ capabilities = capabilities })
+		-- end
 
-		-- require("mason").setup()
-		-- require("mason-lspconfig").setup({
-		-- 	ensure_installed = {
-		-- 	},
-		-- 	handlers = {
-		-- 		function(server_name) -- default handler (optional)
-		-- 			require("lspconfig")[server_name].setup({
-		-- 				capabilities = capabilities,
-		-- 			})
-		-- 		end,
-		--
-		-- 		["lua_ls"] = function()
-		-- 			local lspconfig = require("lspconfig")
-		-- 			lspconfig.lua_ls.setup({
-		-- 				capabilities = capabilities,
-		-- 				settings = {
-		-- 					Lua = {
-		-- 						diagnostics = {
-		-- 							globals = { "vim", "it", "describe", "before_each", "after_each" },
-		-- 						},
-		-- 					},
-		-- 				},
-		-- 			})
-		-- 		end,
-		-- 		["clangd"] = function()
-		-- 			local lspconfig = require("lspconfig")
-		-- 			lspconfig.clangd.setup({
-		-- 				capabilities = capabilities,
-		-- 				cmd = { "clangd", "--offset-encoding=utf-16" },
-		-- 			})
-		-- 		end,
-		-- 		["rust_analyzer"] = function()
-		-- 			local lspconfig = require("lspconfig")
-		-- 			lspconfig.rust_analyzer.setup({
-		-- 				capabilities = capabilities,
-		-- 				settings = {
-		-- 					cargo = {
-		-- 						allFeatures = true,
-		-- 					},
-		-- 					checkOnSave = {
-		-- 						command = "clippy",
-		-- 					},
-		-- 				},
-		-- 			})
-		-- 		end,
-		-- 	},
-		-- })
+		require("mason").setup()
+		require("mason-lspconfig").setup({
+			ensure_installed = {},
+			handlers = {
+				function(server_name) -- default handler (optional)
+					require("lspconfig")[server_name].setup({
+						capabilities = capabilities,
+					})
+				end,
+
+				["lua_ls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.lua_ls.setup({
+						capabilities = capabilities,
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim", "it", "describe", "before_each", "after_each" },
+								},
+							},
+						},
+					})
+				end,
+				["clangd"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.clangd.setup({
+						capabilities = capabilities,
+						cmd = { "clangd", "--offset-encoding=utf-16" },
+					})
+				end,
+				["rust_analyzer"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.rust_analyzer.setup({
+						capabilities = capabilities,
+						settings = {
+							cargo = {
+								allFeatures = true,
+							},
+							checkOnSave = {
+								command = "clippy",
+							},
+						},
+					})
+				end,
+			},
+		})
 	end,
 }

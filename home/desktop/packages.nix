@@ -4,10 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    tmux
-    neovim
-    eza
-
     zathura
     thunderbird
     nextcloud-client

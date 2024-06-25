@@ -27,15 +27,21 @@
   home.packages = with pkgs; [
     tldr
     fd
+    tmux
+    neovim
+    eza
 
-    tree-sitter
+    # tree-sitter
     nodejs
-    isort
-    python312Packages.jedi-language-server
+    python3
+    unzip
+    zip
+    # isort
+    # python312Packages.jedi-language-server
     alejandra
-    lua-language-server
-    luajitPackages.jsregexp
-    ruff
-    stylua
+    # lua-language-server
+    # luajitPackages.jsregexp
+    # ruff
+    # stylua
   ];
 }
