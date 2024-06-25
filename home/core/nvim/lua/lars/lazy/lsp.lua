@@ -85,7 +85,18 @@ return {
 						settings = {
 							Lua = {
 								diagnostics = {
-									globals = { "vim", "it", "describe", "before_each", "after_each" },
+									globals = {
+										"vim",
+										"it",
+										"describe",
+										"before_each",
+										"after_each",
+										"s",
+										"fmt",
+										"fmta",
+										"d",
+										"i",
+									},
 								},
 							},
 						},
