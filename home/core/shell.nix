@@ -8,6 +8,7 @@
     ls = "eza";
     l = "eza -l";
     la = "eza -la";
+    lt = "eza -T";
     f = "z";
     j = "zi";
 
