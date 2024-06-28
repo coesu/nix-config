@@ -5,6 +5,9 @@ return {
 	-- install jsregexp (optional!).
 	build = "make install_jsregexp",
 
+	lazy = true,
+	event = "BufEnter",
+
 	dependencies = { "rafamadriz/friendly-snippets" },
 
 	config = function()
@@ -28,17 +31,12 @@ return {
 		-----------------------------------------------
 
 		ls.config.set_config({
-			-- Don't store snippet history for less overhead
 			history = false,
-			-- Allow autotrigger snippets
 			enable_autosnippets = true,
-			-- For equivalent of UltiSnips visual selection
-			-- store_selection_keys = "<Tab>",
-			-- Event on which to check for exiting a snippet's region
 			region_check_events = "InsertEnter",
 			delete_check_events = "InsertLeave",
 		})
-		-- require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
+		-- require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
 	end,
 }

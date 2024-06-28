@@ -31,7 +31,9 @@
     neovim
     eza
 
-    # tree-sitter
+    lua51Packages.lua
+    luajitPackages.luarocks
+    tree-sitter
     nodejs
     python3
     unzip

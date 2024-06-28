@@ -12,6 +12,7 @@ return {
 				"rust",
 				"bash",
 				"python",
+				"nix",
 				"markdown",
 				"markdown_inline",
 			},
