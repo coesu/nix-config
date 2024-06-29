@@ -50,6 +50,9 @@
     };
   };
   programs.foot.enable = true;
+  programs.foot.settings = {
+    text-bindings = {"\\x15" = "Control+i";};
+  };
   programs.zathura.enable = true;
   programs.yazi.enable = true;
   programs.sioyek.enable = true;

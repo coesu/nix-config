@@ -5,9 +5,6 @@ return {
 	-- install jsregexp (optional!).
 	build = "make install_jsregexp",
 
-	lazy = true,
-	event = "BufEnter",
-
 	dependencies = { "rafamadriz/friendly-snippets" },
 
 	config = function()
@@ -82,7 +79,7 @@ return {
 		-- 	loadfile(ft_path)()
 		-- end
 
-		vim.keymap.set({ "i", "s" }, "<c-i>", function()
+		vim.keymap.set({ "i", "s" }, "<c-u>", function()
 			return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)
 		end, { silent = true, desc = "testy" })
 
