@@ -53,14 +53,24 @@ in {
     '';
   };
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    shellAliases = aliases;
+  };
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    enableBashIntegration = true;
+    tmux.enableShellIntegration = true;
+    fileWidgetCommand = "fd --type f";
   };
 
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    enableBashIntegration = true;
     settings = {
       add_newline = false;
     };
@@ -69,6 +79,7 @@ in {
   programs.direnv = {
     enable = true;
     enableZshIntegration = true; # see note on other shells below
+    enableBashIntegration = true; # see note on other shells below
     nix-direnv.enable = true;
   };
 }

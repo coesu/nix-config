@@ -34,6 +34,9 @@
     lua51Packages.lua
     luajitPackages.luarocks
     tree-sitter
+    killall
+    fastfetch
+
     nodejs
     python3
     unzip

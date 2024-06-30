@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  anyrun,
   ...
 }: {
   programs.anyrun = {
@@ -8,13 +9,10 @@
     config = {
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
-        randr
         rink
         shell
-        symbols
         translate
         dictionary
-        kidex
       ];
       x = {
         fraction = 0.5;

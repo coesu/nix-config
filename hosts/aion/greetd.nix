@@ -3,7 +3,7 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "${pkgs.sway}/bin/sway";
+        command = "${pkgs.hyprland}/bin/Hyprland";
         user = "lars";
       };
       default_session = initial_session;

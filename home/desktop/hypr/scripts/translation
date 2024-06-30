@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 read -p "What should I translate? " text
 translation=$(trans :en "$text")

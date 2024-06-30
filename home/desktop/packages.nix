@@ -13,6 +13,11 @@
     discord-screenaudio
     signal-desktop
 
+    hypridle
+    hyprlock
+    hyprpaper
+    hyprpicker
+
     waybar
     playerctl
     pamixer
