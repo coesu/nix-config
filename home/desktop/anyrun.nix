@@ -12,6 +12,7 @@
         rink
         shell
         translate
+        stdin
         dictionary
       ];
       x = {

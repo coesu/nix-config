@@ -63,8 +63,9 @@ in {
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
-    tmux.enableShellIntegration = true;
     fileWidgetCommand = "fd --type f";
+    changeDirWidgetCommand = "fd --type d";
+    tmux.enableShellIntegration = true;
   };
 
   programs.starship = {

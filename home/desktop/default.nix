@@ -5,11 +5,12 @@
   ...
 }: {
   imports = [
-    ./packages.nix
-    ./gtk.nix
-    ./xdg.nix
-    inputs.anyrun.homeManagerModules.default
     ./anyrun.nix
+    ./gtk.nix
+    inputs.anyrun.homeManagerModules.default
+    ./packages.nix
+    ./scripts.nix
+    ./xdg.nix
   ];
 
   home.file.".config/sway" = {
