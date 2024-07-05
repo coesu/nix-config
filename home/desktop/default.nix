@@ -33,11 +33,11 @@
     source = ./waybar;
     recursive = true;
   };
-  # home.file.".config/zathura" = {
-  #   enable = true;
-  #   source = ./zathura;
-  #   recursive = true;
-  # };
+  home.file.".config/sioyek" = {
+    enable = true;
+    source = ./sioyek;
+    recursive = true;
+  };
   home.file.".config/swappy" = {
     enable = true;
     source = ./swappy;
@@ -55,8 +55,8 @@
     text-bindings = {"\\x15" = "Control+i";};
   };
   programs.zathura.enable = true;
-  programs.yazi.enable = true;
   programs.sioyek.enable = true;
+  programs.yazi.enable = true;
   programs.ncspot.enable = true;
 
   programs.waybar.enable = true;

@@ -5,7 +5,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    zathura
     thunderbird
     nextcloud-client
 
@@ -13,6 +12,7 @@
     firefox
     discord-screenaudio
     signal-desktop
+    obsidian
 
     hypridle
     hyprlock
