@@ -20,6 +20,11 @@
         ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun --plugins ${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so --show-results-immediately true
       '')
     (pkgs.writeShellScriptBin
+      "anyrun-symbols"
+      ''
+        ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun --plugins ${inputs.anyrun.packages.${pkgs.system}.symbols}/lib/libsymbols.so --show-results-immediately true | ${pkgs.wl-clipboard}/lib/wl-copy
+      '')
+    (pkgs.writeShellScriptBin
       "file-search-open"
       ''
         # Prompt the user to enter a file extension using wofi

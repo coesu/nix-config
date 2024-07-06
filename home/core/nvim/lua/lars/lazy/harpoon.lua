@@ -21,7 +21,6 @@ return {
 		vim.keymap.set("n", "<leader>e", function()
 			harpoon:list():select(2)
 		end)
-		print("test")
 		vim.keymap.set("n", "<leader>i", function()
 			harpoon:list():select(3)
 		end)
