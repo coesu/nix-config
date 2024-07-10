@@ -13,6 +13,7 @@
     discord-screenaudio
     signal-desktop
     obsidian
+    neovide
 
     hypridle
     hyprlock

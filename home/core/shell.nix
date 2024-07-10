@@ -74,6 +74,9 @@ in {
     enableBashIntegration = true;
     settings = {
       add_newline = false;
+      nix_shell = {
+        format = "via [$symbol]($style)";
+      };
     };
   };
 
