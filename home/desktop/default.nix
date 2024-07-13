@@ -46,22 +46,27 @@
     recursive = true;
   };
 
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      env.TERM = "xterm-256color";
+  programs = {
+    alacritty = {
+      enable = true;
+      settings = {
+        env.TERM = "xterm-256color";
+      };
     };
+    foot = {
+      enable = true;
+      settings = {
+        text-bindings = {"\\x15" = "Control+i";};
+      };
+    };
+
+    zathura.enable = true;
+    sioyek.enable = true;
+    yazi.enable = true;
+    ncspot.enable = true;
+    wlogout.enable = true;
+    waybar.enable = true;
   };
-  programs.foot.enable = true;
-  programs.foot.settings = {
-    text-bindings = {"\\x15" = "Control+i";};
-  };
-  programs.zathura.enable = true;
-  programs.sioyek.enable = true;
-  programs.yazi.enable = true;
-  programs.ncspot.enable = true;
-  programs.wlogout.enable = true;
-  programs.waybar.enable = true;
   wayland.windowManager.sway.enable = true;
   wayland.windowManager.hyprland.enable = true;
 
@@ -74,6 +79,7 @@
     gnome-keyring = {
       enable = true;
     };
+    nextcloud-client.enable = true;
 
     # Applets, shown in tray
     # Networking
