@@ -8,6 +8,7 @@
     ./anyrun.nix
     ./gtk.nix
     inputs.anyrun.homeManagerModules.default
+    ./hypridle.nix
     ./packages.nix
     ./scripts.nix
     ./xdg.nix
@@ -58,7 +59,8 @@
   programs.sioyek.enable = true;
   programs.yazi.enable = true;
   programs.ncspot.enable = true;
-
+  programs.wlogout.enable = true;
+  programs.hyprlock.enable = true;
   programs.waybar.enable = true;
   wayland.windowManager.sway.enable = true;
   wayland.windowManager.hyprland.enable = true;

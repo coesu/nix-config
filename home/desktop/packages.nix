@@ -15,8 +15,6 @@
     obsidian
     neovide
 
-    hypridle
-    hyprlock
     hyprpaper
     hyprpicker
 
