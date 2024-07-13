@@ -12,6 +12,7 @@
     ./hyprlock.nix
     ./packages.nix
     ./scripts.nix
+    ./wlogout.nix
     ./xdg.nix
   ];
 
@@ -64,7 +65,6 @@
     sioyek.enable = true;
     yazi.enable = true;
     ncspot.enable = true;
-    wlogout.enable = true;
     waybar.enable = true;
   };
   wayland.windowManager.sway.enable = true;
