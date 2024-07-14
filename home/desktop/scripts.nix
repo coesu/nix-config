@@ -3,16 +3,7 @@
   config,
   inputs,
   ...
-}:
-# let
-#     anyrun-dmenu = pkgs.writeShellScriptBin
-#     "anyrun-dmenu"
-#     ''
-#       ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun --plugins ${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so
-#     ''
-#
-# in
-{
+}: {
   home.packages = with pkgs; [
     (pkgs.writeShellScriptBin
       "anyrun-dmenu"

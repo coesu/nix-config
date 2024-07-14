@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./ags.nix
     ./anyrun.nix
     ./gtk.nix
     inputs.anyrun.homeManagerModules.default
@@ -68,7 +69,9 @@
     waybar.enable = true;
   };
   wayland.windowManager.sway.enable = true;
-  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
 
   services = {
     mako = {
