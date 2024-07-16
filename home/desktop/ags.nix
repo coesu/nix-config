@@ -11,6 +11,8 @@
       gtksourceview
       webkitgtk
       accountsservice
+      sassc
+      lm_sensors
     ];
   };
 }

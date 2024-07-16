@@ -74,10 +74,10 @@
   };
 
   services = {
-    mako = {
-      enable = true;
-      defaultTimeout = 5000;
-    };
+    # mako = {
+    #   enable = true;
+    #   defaultTimeout = 5000;
+    # };
     # Keyring
     gnome-keyring = {
       enable = true;

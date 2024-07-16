@@ -192,6 +192,17 @@ return {
 		}),
 		{ condition = tex.in_mathzone }
 	),
+	-- HAT}
+	s(
+		{ trig = "([^%a])ha", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+		fmta("<>\\hat{<>}", {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			d(1, get_visual),
+		}),
+		{ condition = tex.in_mathzone }
+	),
 	-- VECTOR WITH HAT, i.e. \uvec{}
 	s(
 		{ trig = "([^%a])uv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },

@@ -18,6 +18,9 @@
     hyprpaper
     hyprpicker
 
+    lm_sensors
+    sassc
+
     waybar
     playerctl
     pamixer
