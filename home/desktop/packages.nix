@@ -16,6 +16,8 @@
     neovide
 
     hyprpaper
+    hypridle
+    hyprlock
     hyprpicker
 
     lm_sensors
