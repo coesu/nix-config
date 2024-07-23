@@ -12,6 +12,7 @@
     firefox
     discord-screenaudio
     signal-desktop
+    whatsapp-for-linux
     obsidian
     neovide
 
