@@ -13,6 +13,7 @@
     discord-screenaudio
     signal-desktop
     whatsapp-for-linux
+    mattermost-desktop
     obsidian
     neovide
 
