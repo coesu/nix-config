@@ -16,6 +16,7 @@
     mattermost-desktop
     obsidian
     neovide
+    anki-bin
 
     hyprpaper
     hypridle
