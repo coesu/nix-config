@@ -5,46 +5,45 @@
   ...
 }: {
   imports = [
-    ./ags.nix
     ./anyrun.nix
     ./gtk.nix
-    inputs.anyrun.homeManagerModules.default
     ./hypridle.nix
+    ./hyprland.nix
     ./hyprlock.nix
+    inputs.anyrun.homeManagerModules.default
     ./packages.nix
     ./scripts.nix
     ./wlogout.nix
     ./xdg.nix
   ];
 
-  home.file.".config/sway" = {
-    enable = true;
-    source = ./sway;
-    recursive = true;
-  };
-  home.file.".config/hypr" = {
-    enable = true;
-    source = ./hypr;
-    recursive = true;
-  };
+  # home.file.".config/sway" = {
+  #   enable = true;
+  #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/sway";
+  #   recursive = true;
+  # };
+  # home.file.".config/hypr" = {
+  #   enable = true;
+  #   recursive = true;
+  #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/hypr";
+  # };
   home.file.".config/wofi" = {
     enable = true;
-    source = ./wofi;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/wofi";
     recursive = true;
   };
-  home.file.".config/waybar" = {
+  home.file.".config/waybar/config" = {
     enable = true;
-    source = ./waybar;
-    recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/waybar/config";
   };
   home.file.".config/sioyek" = {
     enable = true;
-    source = ./sioyek;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/sioyek";
     recursive = true;
   };
   home.file.".config/swappy" = {
     enable = true;
-    source = ./swappy;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/swappy";
     recursive = true;
   };
 
@@ -67,10 +66,6 @@
     yazi.enable = true;
     ncspot.enable = true;
     waybar.enable = true;
-  };
-  wayland.windowManager.sway.enable = true;
-  wayland.windowManager.hyprland = {
-    enable = true;
   };
 
   services = {

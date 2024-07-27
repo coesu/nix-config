@@ -14,13 +14,15 @@
 
   home.file.".tmux.conf" = {
     enable = true;
-    source = ./tmux.conf;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/core/tmux.conf";
+    # source = ./tmux.conf;
   };
 
   home.file.".config/nvim" = {
     enable = true;
     recursive = true;
-    source = ./nvim;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/core/nvim";
+    # source = ./nvim;
   };
 
   programs.btop.enable = true;

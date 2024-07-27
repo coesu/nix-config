@@ -13,6 +13,11 @@ set $left m
 set $down n
 set $up e
 set $right i
+
+set $left2 h
+set $down2 j
+set $up2 k
+set $right2 l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
@@ -30,7 +35,8 @@ output * bg /home/lars/nix-config/home/wallpaper.jpg fill
 # Example configuration:
 #
 output DP-2 resolution 2560x1440 position 0,0
-output HDMI-A-1 resolution 1920x1080 position -1080 -500 transform 270
+output HDMI-A-1 resolution 1920x1080
+output 'Samsung Electric Company C27F390 HTQH800776' resolution 1920x1080
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -74,10 +80,11 @@ bindsym $mod+x mode "$power_control"
       middle_emulation enabled
   }
 
-  input "6899:1:Kingsis_Peripherals_ZOWIE_Gaming_mouse" {
-      accel_profile "flat"
-      pointer_accel 0.4
-  }
+input "type:keyboard" {
+    xkb_layout us,de
+    xkb_variant ,nodeadkeys
+    xkb_options grp:caps_toggle
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -123,6 +130,11 @@ bindsym $mod+x mode "$power_control"
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
 
+    bindsym $mod+$left2 focus left
+    bindsym $mod+$down2 focus down
+    bindsym $mod+$up2 focus up
+    bindsym $mod+$right2 focus right
+
 #
 # Workspaces:
 #
@@ -151,6 +163,10 @@ bindsym $mod+x mode "$power_control"
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
+    # Switching between workspaces with gestures
+    bindgesture swipe:right workspace prev
+    bindgesture swipe:left workspace next
+
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
@@ -165,7 +181,7 @@ bindsym $mod+x mode "$power_control"
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+v splith
-    bindsym $mod+h splitv
+    bindsym $mod+g splitv
     bindsym $mod+b layout toggle split
 
     # Switch the current container between different layout styles
@@ -207,6 +223,11 @@ mode "resize" {
     bindsym $down resize grow height 40px
     bindsym $up resize shrink height 40px
     bindsym $right resize grow width 40px
+
+    bindsym $left2 resize shrink width 40px
+    bindsym $down2 resize grow height 40px
+    bindsym $up2 resize shrink height 40px
+    bindsym $right2 resize grow width 40px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
