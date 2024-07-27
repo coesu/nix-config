@@ -87,6 +87,6 @@ return {
 			return vim.snippet.active({ direction = -1 }) and vim.snippet.jump(-1)
 		end, { silent = true, desc = "testy" })
 
-		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
+		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
 	end,
 }
