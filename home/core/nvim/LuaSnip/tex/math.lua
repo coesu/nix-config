@@ -426,7 +426,7 @@ return {
 	--
 
 	-- DIFFERENTIAL, i.e. \diff
-	s({ trig = "df", snippetType = "autosnippet", priority = 2000, snippetType = "autosnippet" }, {
+	s({ trig = "df", snippetType = "autosnippet", priority = 2000 }, {
 		t("\\diff"),
 	}, { condition = tex.in_mathzone }),
 	-- BASIC INTEGRAL SYMBOL, i.e. \int
@@ -504,7 +504,7 @@ return {
 	-- COLON, i.e. \colon
 	s({ trig = "::", snippetType = "autosnippet" }, {
 		t("\\colon "),
-	}),
+	}, { condition = tex.in_mathzone }),
 	-- IMPLIES, i.e. \implies
 	s({ trig = ">>", snippetType = "autosnippet" }, {
 		t("\\implies "),

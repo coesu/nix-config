@@ -17,6 +17,7 @@
     obsidian
     neovide
     anki-bin
+    texliveFull
 
     hyprpaper
     hypridle
