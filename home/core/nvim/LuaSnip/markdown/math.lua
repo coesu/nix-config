@@ -450,6 +450,10 @@ return {
 	s({ trig = "DI", snippetType = "autosnippet" }, {
 		t("\\div "),
 	}, { condition = in_mathzone }),
+	-- NABLA OPERATOR,
+	s({ trig = "nab", snippetType = "autosnippet" }, {
+		t("\\nabla "),
+	}, { condition = in_mathzone }),
 	-- LAPLACIAN OPERATOR, i.e. \laplacian
 	s({ trig = "laa", snippetType = "autosnippet" }, {
 		t("\\laplacian "),
