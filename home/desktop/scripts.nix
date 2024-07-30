@@ -30,5 +30,20 @@
         echo $file
         xdg-open "$file"
       '')
+    (pkgs.writeShellScriptBin
+      "monitor-config-home"
+      ''
+        hyprctl keyword monitor eDP-1,disable
+        hyprctl keyword monitor HDMI-A-1,preferred,0x0,1
+        hyprctl keyword monitor HDMI-A-1,transform,1
+        hyprctl keyword monitor DP-1,preferred,1080x0,1
+      '')
+    (pkgs.writeShellScriptBin
+      "monitor-config-remote"
+      ''
+        hyprctl keyword monitor eDP-1,preferred,0x1080,1
+        hyprctl keyword monitor HDMI-A-1,preferred,0x0,1
+        hyprctl keyword monitor DP-1,preferred,1920x1080,1
+      '')
   ];
 }
