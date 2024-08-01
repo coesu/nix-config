@@ -489,7 +489,7 @@ return {
 	-- COLON, i.e. \colon
 	s({ trig = "::", snippetType = "autosnippet" }, {
 		t("\\colon "),
-	}),
+	}, { condition = in_mathzone }),
 	-- IMPLIES, i.e. \implies
 	s({ trig = ">>", snippetType = "autosnippet" }, {
 		t("\\implies "),
