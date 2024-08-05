@@ -24,6 +24,7 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = inputs @ {
@@ -68,6 +69,7 @@
             inherit inputs;
           };
         }
+        # (import ./overlays)
       ];
     };
     nixosConfigurations.nixl = nixpkgs.lib.nixosSystem {
@@ -89,6 +91,7 @@
             inherit inputs;
           };
         }
+        # (import ./overlays)
       ];
     };
   };
