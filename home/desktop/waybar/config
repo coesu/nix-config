@@ -7,7 +7,7 @@
     "spacing": 8, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces"],
     // "modules-center": ["river/window"],
-    "modules-right": ["wireplumber", "network", "backlight", "battery", "tray", "clock"],
+    "modules-right": ["wireplumber", "backlight", "battery", "tray", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{name}",
