@@ -24,6 +24,8 @@
     hyprlock
     hyprpicker
 
+    # hyprpanel
+
     lm_sensors
     sassc
 
