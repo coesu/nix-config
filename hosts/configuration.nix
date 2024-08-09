@@ -128,6 +128,7 @@
     # media-session.enable = true;
   };
 
+  hardware.keyboard.qmk.enable = true;
   hardware.graphics = {
     enable = true;
   };
@@ -152,6 +153,7 @@
       tree
       zsh
       alacritty
+      qmk
     ];
   };
 
