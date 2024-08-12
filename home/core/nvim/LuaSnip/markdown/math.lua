@@ -188,6 +188,17 @@ return {
 		}),
 		{ condition = in_mathzone }
 	),
+	-- HAT}
+	s(
+		{ trig = "([^%a])ha", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+		fmta("<>\\hat{<>}", {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			d(1, get_visual),
+		}),
+		{ condition = in_mathzone }
+	),
 	-- VECTOR WITH HAT, i.e. \uvec{}
 	s(
 		{ trig = "([^%a])uv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
@@ -291,7 +302,7 @@ return {
 	-- DERIVATIVE with denominator only
 	s(
 		{ trig = "([^%a])dV", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\dvOne{<>}", {
+		fmta("<>\\frac{\\mathrm{d}}{\\mathrm{d}<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -302,7 +313,7 @@ return {
 	-- DERIVATIVE with numerator and denominator
 	s(
 		{ trig = "([^%a])dvv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\dv{<>}{<>}", {
+		fmta("<>\\frac{\\mathrm{d}<>}{\\mathrm{d}<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -314,12 +325,13 @@ return {
 	-- DERIVATIVE with numerator, denominator, and higher-order argument
 	s(
 		{ trig = "([^%a])ddv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\dvN{<>}{<>}{<>}", {
+		fmta("<>\\frac{\\mathrm{d}^{<>}<>}{\\mathrm{d}^{<>}<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
 			i(1),
 			i(2),
+			rep(1),
 			i(3),
 		}),
 		{ condition = in_mathzone }
@@ -327,7 +339,7 @@ return {
 	-- PARTIAL DERIVATIVE with denominator only
 	s(
 		{ trig = "([^%a])pV", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\pdvOne{<>}", {
+		fmta("<>\\frac{\\partial}{\\partial <>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -338,7 +350,7 @@ return {
 	-- PARTIAL DERIVATIVE with numerator and denominator
 	s(
 		{ trig = "([^%a])pvv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\pdv{<>}{<>}", {
+		fmta("<>\\ff{\\partial <>}{\\partial <>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -350,13 +362,48 @@ return {
 	-- PARTIAL DERIVATIVE with numerator, denominator, and higher-order argument
 	s(
 		{ trig = "([^%a])ppv", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\pdvN{<>}{<>}{<>}", {
+		fmta("<>\\frac{\\partial^{<>}<>}{\\partial^{<>}<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
 			i(1),
 			i(2),
+			rep(1),
 			i(3),
+		}),
+		{ condition = in_mathzone }
+	),
+	-- BRA
+	s(
+		{ trig = "([^%a])bra", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+		fmta("<>\\langle <> |", {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			i(1),
+		}),
+		{ condition = in_mathzone }
+	),
+	-- KET
+	s(
+		{ trig = "([^%a])ket", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+		fmta("<>| <> \\rangle", {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			i(1),
+		}),
+		{ condition = in_mathzone }
+	),
+	-- BRAKET
+	s(
+		{ trig = "([^%a])brk", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
+		fmta("<>\\left\\langle <> \\middle| <> \\right\\rangle", {
+			f(function(_, snip)
+				return snip.captures[1]
+			end),
+			i(1),
+			i(2),
 		}),
 		{ condition = in_mathzone }
 	),

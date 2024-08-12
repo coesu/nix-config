@@ -19,12 +19,9 @@
     anki-bin
     texliveFull
 
-    hyprpaper
     hypridle
     hyprlock
     hyprpicker
-
-    # hyprpanel
 
     lm_sensors
     sassc

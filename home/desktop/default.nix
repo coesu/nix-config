@@ -8,7 +8,7 @@
     ./anyrun.nix
     ./gtk.nix
     ./hypridle.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./hyprlock.nix
     inputs.anyrun.homeManagerModules.default
     ./packages.nix
@@ -22,11 +22,12 @@
   #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/sway";
   #   recursive = true;
   # };
-  # home.file.".config/hypr" = {
-  #   enable = true;
-  #   recursive = true;
-  #   source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/hypr";
-  # };
+  home.file.".config/hypr" = {
+    enable = true;
+    recursive = true;
+    source = ./hypr;
+  };
+  # home.file.".config/hypr/hyprpaper.conf".enable = false;
   home.file.".config/wofi" = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/wofi";

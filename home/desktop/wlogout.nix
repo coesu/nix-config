@@ -17,8 +17,8 @@
       button {
           background-repeat: no-repeat;
           background-position: center;
-          min-width: 50px;
-          min-height: 50px;
+          min-width: 20px;
+          min-height: 20px;
           padding: 5px;
           border-style: solid;
           border-radius: 4px;
