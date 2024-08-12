@@ -111,7 +111,7 @@ return {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
-			t("\\dag"),
+			t("\\dagger"),
 		}),
 		{ condition = tex.in_mathzone }
 	),

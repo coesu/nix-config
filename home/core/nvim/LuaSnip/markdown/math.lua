@@ -553,4 +553,8 @@ return {
 	s({ trig = "xx", snippetType = "autosnippet" }, {
 		t("\\times "),
 	}),
+	-- SQUAREROOT 1 over 2
+	s({ trig = "1q2", snippetType = "autosnippet" }, {
+		t("\\frac{1}{\\sqrt{2}} "),
+	}),
 }
