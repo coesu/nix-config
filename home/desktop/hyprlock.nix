@@ -19,7 +19,7 @@ in {
       background = [
         {
           monitor = "";
-          path = "~/nix-config/home/wallpaper.jpg";
+          path = "~/nix-config/home/gruv-estimate.jpg";
         }
       ];
 

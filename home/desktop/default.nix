@@ -65,7 +65,7 @@
     zathura.enable = true;
     sioyek.enable = true;
     yazi.enable = true;
-    ncspot.enable = true;
+    # ncspot.enable = true;
     waybar.enable = true;
   };
 
@@ -74,17 +74,11 @@
       enable = true;
       defaultTimeout = 5000;
     };
-    # Keyring
     gnome-keyring = {
       enable = true;
     };
     nextcloud-client.enable = true;
-
-    # Applets, shown in tray
-    # Networking
     network-manager-applet.enable = true;
-
-    # Bluetooth
     blueman-applet.enable = true;
   };
 }

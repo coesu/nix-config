@@ -24,13 +24,17 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    nixos-cosmic,
     ...
   }: let
     forAllSystems = nixpkgs.lib.genAttrs [
@@ -91,6 +95,13 @@
             inherit inputs;
           };
         }
+        # {
+        #   nix.settings = {
+        #     substituters = ["https://cosmic.cachix.org/"];
+        #     trusted-public-keys = ["cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="];
+        #   };
+        # }
+        # nixos-cosmic.nixosModules.default
         # (import ./overlays)
       ];
     };

@@ -20,6 +20,7 @@
     texliveFull
 
     hypridle
+    hyprpaper
     hyprlock
     hyprpicker
 

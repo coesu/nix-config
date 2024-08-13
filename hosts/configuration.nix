@@ -79,7 +79,7 @@
   services.gvfs.enable = true;
 
   stylix.enable = true;
-  stylix.image = ./../home/wallpaper.jpg;
+  stylix.image = ./../home/gruv-estimate.jpg;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
   stylix.cursor.package = pkgs.bibata-cursors;
