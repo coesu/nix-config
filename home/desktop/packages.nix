@@ -39,5 +39,10 @@
     grim
     slurp
     xdragon
+
+    lazygit
+    ttyper
+    du-dust
+    helix
   ];
 }
