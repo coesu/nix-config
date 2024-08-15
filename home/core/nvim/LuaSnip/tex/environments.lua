@@ -186,7 +186,9 @@ return {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
-			d(1, get_visual),
+			-- d(1, get_visual),
+			i(1),
+			-- i(2),
 		})
 	),
 	-- INLINE MATH ON NEW LINE

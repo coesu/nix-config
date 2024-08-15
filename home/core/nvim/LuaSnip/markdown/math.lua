@@ -107,7 +107,7 @@ return {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
-			t("\\dag"),
+			t("\\dagger"),
 		}),
 		{ condition = in_mathzone }
 	),
@@ -238,7 +238,8 @@ return {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
-			d(1, get_visual),
+			-- d(1, get_visual),
+			i(1),
 			i(2),
 		}),
 		{ condition = in_mathzone }
