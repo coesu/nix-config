@@ -37,7 +37,7 @@
         ];
       in {
         "application/json" = browser;
-        "application/pdf" = "sioyek.desktop";
+        "application/pdf" = "org.pwmt.zathura.desktop";
 
         "text/html" = browser;
         "text/xml" = browser;
