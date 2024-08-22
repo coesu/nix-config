@@ -13,7 +13,7 @@
     (pkgs.writeShellScriptBin
       "anyrun-symbols"
       ''
-        ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun --plugins ${inputs.anyrun.packages.${pkgs.system}.symbols}/lib/libsymbols.so --show-results-immediately true | ${pkgs.wl-clipboard}/lib/wl-copy
+        ${inputs.anyrun.packages.${pkgs.system}.anyrun}/bin/anyrun --plugins ${inputs.anyrun.packages.${pkgs.system}.symbols}/lib/libsymbols.so --show-results-immediately true
       '')
     (pkgs.writeShellScriptBin
       "file-search-open"
