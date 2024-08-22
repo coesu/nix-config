@@ -35,3 +35,6 @@ nvim-test:
 
 nvim-clean:
   rm -rf /home/lars/.config/nvim
+
+git-flake:
+  git add flake.lock && git commit -m 'updates' && git push
