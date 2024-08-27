@@ -65,7 +65,7 @@
     zathura.enable = true;
     sioyek.enable = true;
     yazi.enable = true;
-    # ncspot.enable = true;
+    ncspot.enable = true;
     waybar.enable = true;
   };
 

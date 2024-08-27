@@ -44,5 +44,7 @@
     ttyper
     du-dust
     helix
+
+    ausweisapp
   ];
 }
