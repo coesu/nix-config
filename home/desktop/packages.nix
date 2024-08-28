@@ -46,5 +46,6 @@
     helix
 
     ausweisapp
+    qalculate-gtk
   ];
 }
