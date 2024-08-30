@@ -44,5 +44,8 @@
     ttyper
     du-dust
     helix
+
+    ausweisapp
+    qalculate-gtk
   ];
 }
