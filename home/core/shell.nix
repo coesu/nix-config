@@ -20,6 +20,8 @@
     vim = "nvim";
     vi = "nvim";
 
+    t = "tmux";
+
     za = "zathura";
 
     ff = "fastfetch";
@@ -46,6 +48,8 @@ in {
     shellAliases = aliases;
 
     initExtra = ''
+      setopt extended_glob null_glob
+      set -o vi
       bindkey '^o' autosuggest-execute
       bindkey -s '^n' "nvim +\"Telescope git_files cwd=.\"\n"
       bindkey -s '^f' "tmux-sessionizer\n"
