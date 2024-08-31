@@ -53,6 +53,13 @@
       enable = true;
       settings = {
         env.TERM = "xterm-256color";
+        keyboard.bindings = [
+          {
+            key = "I";
+            mods = "Control";
+            chars = "\\u0015";
+          }
+        ];
       };
     };
     foot = {
