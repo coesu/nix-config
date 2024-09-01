@@ -25,6 +25,14 @@
 
   security.polkit.enable = true;
 
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
+  # environment.systemPackages = with pkgs; [protonup];
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+  };
+
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -165,6 +173,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    protonup
     vim
     ffmpeg
     imagemagick
