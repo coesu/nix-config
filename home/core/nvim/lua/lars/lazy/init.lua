@@ -7,4 +7,5 @@ return {
 	{ "numToStr/Comment.nvim", opts = {} },
 	"simrat39/rust-tools.nvim",
 	"christoomey/vim-tmux-navigator",
+	"p00f/clangd_extensions.nvim",
 }

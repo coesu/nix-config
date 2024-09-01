@@ -51,22 +51,12 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
-			jedi_language_server = {},
-			texlab = {},
-			lua_ls = {
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim", "it", "describe", "before_each", "after_each" },
-						},
-					},
-				},
-			},
+			clangd = {},
 		}
-		-- local lspconfig = require("lspconfig")
-		-- for server, opts in pairs(servers) do
-		-- 	lspconfig[server].setup({ capabilities = capabilities })
-		-- end
+		local lspconfig = require("lspconfig")
+		for server, opts in pairs(servers) do
+			lspconfig[server].setup({ capabilities = capabilities })
+		end
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -102,13 +92,23 @@ return {
 						},
 					})
 				end,
-				["clangd"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.clangd.setup({
-						capabilities = capabilities,
-						cmd = { "clangd", "--offset-encoding=utf-16" },
-					})
-				end,
+				-- ["clangd"] = function()
+				-- 	local lspconfig = require("lspconfig")
+				-- 	lspconfig.clangd.setup({
+				-- 		capabilities = capabilities,
+				-- 		-- cmd = { "clangd", "--offset-encoding=utf-16" },
+				-- 		cmd = {
+				-- 			"clangd",
+				-- 			"--background-index",
+				-- 			"--clang-tidy",
+				-- 			"--header-insertion=iwyu",
+				-- 			"--completion-style=detailed",
+				-- 			"--function-arg-placeholders",
+				-- 			"--fallback-style=llvm",
+				-- 			"--offset-encoding=utf-16",
+				-- 		},
+				-- 	})
+				-- end,
 				["rust_analyzer"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.rust_analyzer.setup({
