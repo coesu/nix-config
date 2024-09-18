@@ -93,6 +93,11 @@
 
   services.gvfs.enable = true;
 
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
+  };
+
   stylix.enable = true;
   stylix.image = ./../home/gruv-estimate.jpg;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";

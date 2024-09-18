@@ -18,6 +18,7 @@
     neovide
     anki-bin
     texliveFull
+    gimp
 
     hypridle
     hyprpaper
