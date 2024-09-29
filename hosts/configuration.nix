@@ -147,12 +147,19 @@
     # no need to redefine it in your config for now)
     # media-session.enable = true;
   };
+  services.jack.alsa.enable = true;
 
   hardware.keyboard.qmk.enable = true;
   hardware.graphics = {
     enable = true;
   };
   services.xserver.videoDrivers = ["amdgpu"];
+
+  services.syncthing = {
+    enable = true;
+    user = "lars";
+    dataDir = "/home/lars/Sync";
+  };
 
   programs.nix-ld.enable = true;
 
