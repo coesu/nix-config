@@ -25,6 +25,8 @@
         ublock-origin
         youtube-shorts-block
         vimium
+        istilldontcareaboutcookies
+        canvasblocker
       ];
 
       search = {

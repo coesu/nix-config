@@ -84,7 +84,6 @@
     gnome-keyring = {
       enable = true;
     };
-    nextcloud-client.enable = true;
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
   };
