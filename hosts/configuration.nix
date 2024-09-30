@@ -33,35 +33,6 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
-  # systemd = {
-  #   user.services.polkit-gnome-authentication-agent-1 = {
-  #     description = "polkit-gnome-authentication-agent-1";
-  #     serviceConfig = {
-  #       Type = "simple";
-  #       # ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  #       ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
-  #       Restart = "on-failure";
-  #       RestartSec = 1;
-  #       TimeoutStopSec = 10;
-  #     };
-  #   };
-  # };
-
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
@@ -86,10 +57,6 @@
       ];
     };
   };
-
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  security.pam.services.gdm-password.enableGnomeKeyring = true;
 
   services.gvfs.enable = true;
 
@@ -203,6 +170,7 @@
     gparted
     nix-output-monitor
     nvd
+    lxqt.lxqt-policykit
   ];
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
