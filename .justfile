@@ -37,4 +37,6 @@ nvim-clean:
   rm -rf /home/lars/.config/nvim
 
 git-flake:
+  nix flake update
   git add flake.lock && git commit -m 'updates' && git push
+  sudo nixos-rebuild switch --flake .
