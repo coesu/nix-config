@@ -143,7 +143,6 @@
     ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
-      firefox
       tree
       zsh
       alacritty
