@@ -553,6 +553,14 @@ return {
 	s({ trig = ",.", snippetType = "autosnippet" }, {
 		t("\\cdot "),
 	}),
+	-- LARGE TENSOR PRODUCT, i.e. \bigotimes
+	s({ trig = "btxx", snippetType = "autosnippet" }, {
+		t("\\bigotimes "),
+	}),
+	-- TENSOR PRODUCT, i.e. \otimes
+	s({ trig = "txx", snippetType = "autosnippet" }, {
+		t("\\otimes "),
+	}),
 	-- CROSS PRODUCT, i.e. \times
 	s({ trig = "xx", snippetType = "autosnippet" }, {
 		t("\\times "),
