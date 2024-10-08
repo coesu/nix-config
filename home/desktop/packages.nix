@@ -44,6 +44,8 @@
     du-dust
     helix
 
+    zotero
+
     ausweisapp
     qalculate-gtk
   ];
