@@ -30,6 +30,7 @@
     tldr
     fd
     tmux
+    zellij
     neovim
     eza
 
