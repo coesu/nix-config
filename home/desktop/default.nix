@@ -15,6 +15,7 @@
     ./scripts.nix
     ./wlogout.nix
     ./xdg.nix
+    ./pass.nix
   ];
 
   # home.file.".config/sway" = {
@@ -80,9 +81,6 @@
     mako = {
       enable = true;
       defaultTimeout = 5000;
-    };
-    gnome-keyring = {
-      enable = true;
     };
     network-manager-applet.enable = true;
     blueman-applet.enable = true;

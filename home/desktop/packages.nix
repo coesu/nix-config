@@ -18,6 +18,8 @@
     texliveFull
     gimp
 
+    oath-toolkit
+
     hypridle
     hyprpaper
     hyprlock

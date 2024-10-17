@@ -73,6 +73,11 @@
         };
       };
     };
+    # nativeMessagingHosts.passff = true;
+  };
+  programs.browserpass = {
+    enable = true;
+    browsers = ["firefox"];
   };
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/http" = ["firefox.desktop"];
