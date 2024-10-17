@@ -9,11 +9,9 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     # ./greetd.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -94,8 +92,6 @@
     popups = 12;
   };
   stylix.polarity = "dark";
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   hardware.bluetooth.enable = true;
@@ -109,10 +105,6 @@
     pulse.enable = true;
     wireplumber.enable = true;
     jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
   };
   services.jack.alsa.enable = true;
 
@@ -132,7 +124,6 @@
 
   programs.nh.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lars = {
     isNormalUser = true;
     initialPassword = "123";
@@ -140,7 +131,7 @@
       "wheel"
       "networkmanager"
       "docker"
-    ]; # Enable ‘sudo’ for the user.
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -183,39 +174,12 @@
   environment.variables.EDITOR = "nvim";
   environment.pathsToLink = ["/share/zsh"];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
-  # List services that you want to enable:
-
   services.openssh.enable = true;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 }
