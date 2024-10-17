@@ -17,7 +17,7 @@ return {
 	--     workspaces = {
 	--         {
 	--             name = "main",
-	--             path = "~/Nextcloud/obsidian",
+	--             path = "~/Sync/obsidian",
 	--         },
 	--     },
 	--     templates = {
@@ -37,7 +37,7 @@ return {
 			workspaces = {
 				{
 					name = "main",
-					path = "~/Nextcloud/obsidian",
+					path = "~/Sync/obsidian",
 				},
 			},
 			notes_subdir = "notes",
