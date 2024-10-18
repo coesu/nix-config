@@ -33,6 +33,10 @@
     zellij
     neovim
     eza
+    lazygit
+    ttyper
+    du-dust
+    helix
 
     lua51Packages.lua
     luajitPackages.luarocks
