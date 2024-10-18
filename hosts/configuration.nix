@@ -63,35 +63,37 @@
     plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
   };
 
-  stylix.enable = true;
-  stylix.image = ./../home/gruv-estimate.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix = {
+    enable = true;
+    image = ./../home/gruv-estimate.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
-  stylix.cursor.size = 24;
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata-Modern-Ice";
+    cursor.size = 24;
 
-  stylix.fonts = {
-    monospace = {
-      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-      name = "JetBrainsMono Nerd Font Mono";
+    fonts = {
+      monospace = {
+        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        name = "JetBrainsMono Nerd Font Mono";
+      };
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
     };
-    sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+    fonts.sizes = {
+      applications = 12;
+      terminal = 13;
+      desktop = 12;
+      popups = 12;
     };
-    serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
-    };
+    polarity = "dark";
   };
-  stylix.fonts.sizes = {
-    applications = 12;
-    terminal = 13;
-    desktop = 12;
-    popups = 12;
-  };
-  stylix.polarity = "dark";
 
   # Enable sound.
   hardware.bluetooth.enable = true;
