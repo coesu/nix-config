@@ -34,13 +34,13 @@
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
-  services.xserver.windowManager.qtile = {
-    enable = true;
-    extraPackages = python3Packages:
-      with python3Packages; [
-        qtile-extras
-      ];
-  };
+  # services.xserver.windowManager.qtile = {
+  #   enable = true;
+  #   extraPackages = python3Packages:
+  #     with python3Packages; [
+  #       qtile-extras
+  #     ];
+  # };
   programs.hyprland = {
     enable = true;
   };
