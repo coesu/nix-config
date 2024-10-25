@@ -15,7 +15,6 @@
     ./scripts.nix
     ./wlogout.nix
     ./xdg.nix
-    ./pass.nix
   ];
 
   # home.file.".config/sway" = {
