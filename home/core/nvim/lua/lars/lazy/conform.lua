@@ -13,6 +13,7 @@ return {
 				-- markdown = { "prettier" },
 				-- css = { "prettier" },
 				nix = { "alejandra" },
+				rust = { "rustfmt" },
 				-- cpp = { "clang-format" },
 			},
 			format_on_save = {

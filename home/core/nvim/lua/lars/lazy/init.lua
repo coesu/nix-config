@@ -5,7 +5,7 @@ return {
 	},
 	"folke/neodev.nvim",
 	{ "numToStr/Comment.nvim", opts = {} },
-	{ "mrcjkb/rustaceanvim", version = "^5" },
+	-- { "mrcjkb/rustaceanvim", version = "^5" },
 	"christoomey/vim-tmux-navigator",
 	"p00f/clangd_extensions.nvim",
 	"chrisbra/unicode.vim",

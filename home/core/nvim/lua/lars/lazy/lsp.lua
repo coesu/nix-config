@@ -109,20 +109,20 @@ return {
 				-- 		},
 				-- 	})
 				-- end,
-				["rust_analyzer"] = function()
-					-- local lspconfig = require("lspconfig")
-					-- lspconfig.rust_analyzer.setup({
-					-- 	capabilities = capabilities,
-					-- 	settings = {
-					-- 		cargo = {
-					-- 			allFeatures = true,
-					-- 		},
-					-- 		checkOnSave = {
-					-- 			command = "clippy",
-					-- 		},
-					-- 	},
-					-- })
-				end,
+				-- ["rust_analyzer"] = function()
+				-- 	local lspconfig = require("lspconfig")
+				-- 	lspconfig.rust_analyzer.setup({
+				-- 		capabilities = capabilities,
+				-- 		settings = {
+				-- 			cargo = {
+				-- 				allFeatures = true,
+				-- 			},
+				-- 			checkOnSave = {
+				-- 				command = "clippy",
+				-- 			},
+				-- 		},
+				-- 	})
+				-- end,
 			},
 		})
 	end,
