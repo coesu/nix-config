@@ -116,12 +116,6 @@
   };
   services.xserver.videoDrivers = ["amdgpu"];
 
-  services.syncthing = {
-    enable = true;
-    user = "lars";
-    dataDir = "/home/lars/Sync";
-  };
-
   programs.nix-ld.enable = true;
 
   programs.nh.enable = true;
