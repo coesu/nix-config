@@ -14,6 +14,7 @@
     mattermost-desktop
     obsidian
     neovide
+    nextcloud-client
     anki-bin
     texliveFull
     gimp
