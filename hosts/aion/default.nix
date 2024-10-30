@@ -12,6 +12,7 @@
 
   virtualisation.docker.enable = true;
 
+  hardware.amdgpu.opencl.enable = true;
   services.ollama = {
     enable = true;
     acceleration = "rocm";
