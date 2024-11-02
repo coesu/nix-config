@@ -5,13 +5,6 @@
   ...
 }: let
   aliases = {
-    ls = "eza";
-    l = "eza -l";
-    la = "eza -la";
-    lt = "eza -T";
-    f = "z";
-    j = "zi";
-
     cp = "cp -iv";
     mv = "mv -iv";
     rm = "rm -iv";
@@ -59,6 +52,7 @@ in {
 
   programs.nushell = {
     enable = true;
+    shellAliases = aliases;
   };
   programs.carapace = {
     enable = true;
