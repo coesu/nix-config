@@ -44,6 +44,7 @@
   programs.hyprland = {
     enable = true;
   };
+  programs.river.enable = true;
   programs.sway.wrapperFeatures.gtk = true;
 
   xdg = {
