@@ -5,6 +5,8 @@
   ...
 }: let
   aliases = {
+    la = "ls -a";
+    l = "ls -l";
     cp = "cp -iv";
     mv = "mv -iv";
     rm = "rm -iv";
@@ -84,6 +86,11 @@ in {
         format = "via [$symbol]($style)";
       };
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableNushellIntegration = true;
   };
 
   programs.direnv = {

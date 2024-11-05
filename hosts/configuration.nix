@@ -34,6 +34,8 @@
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
+  programs.sway.wrapperFeatures.gtk = true;
+
   # services.xserver.windowManager.qtile = {
   #   enable = true;
   #   extraPackages = python3Packages:
@@ -41,11 +43,11 @@
   #       qtile-extras
   #     ];
   # };
+
   programs.hyprland = {
     enable = true;
   };
   programs.river.enable = true;
-  programs.sway.wrapperFeatures.gtk = true;
 
   xdg = {
     portal = {
@@ -129,7 +131,7 @@
       "networkmanager"
       "docker"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     packages = with pkgs; [
       tree
       zsh
@@ -141,6 +143,7 @@
   environment.systemPackages = with pkgs; [
     protonup
     vim
+    nushell
     ffmpeg
     imagemagick
     neovim
