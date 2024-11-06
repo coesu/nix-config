@@ -61,6 +61,7 @@ in {
           rm: {
               always_trash: true
           }
+          edit_mode: vi
           keybindings: [
         {
             name: change_dir_with_fzf
