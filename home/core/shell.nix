@@ -55,6 +55,60 @@ in {
   programs.nushell = {
     enable = true;
     shellAliases = aliases;
+    extraConfig = ''
+      $env.config = {
+          show_banner: false
+          rm: {
+              always_trash: true
+          }
+          keybindings: [
+        {
+            name: change_dir_with_fzf
+            modifier: ALT
+            keycode: Char_c
+            mode: vi_insert
+            event:[
+              # { edit: Clear }
+              { edit: InsertString,
+                value: "cd (fd -t d | sk)"
+
+              }
+              { send: Enter }
+              ]
+      	}
+      	{
+            name: select_file_with_fzf
+            modifier: CONTROL
+            keycode: Char_t
+            mode: vi_insert
+            event:[
+              # { edit: Clear }
+              { edit: InsertString,
+                value: "(fd -t f | sk)"
+
+              }
+              { send: Enter }
+              ]
+      	}
+      	{
+            name: open_file_nvim_sk
+            modifier: CONTROL
+            keycode: Char_e
+            mode: vi_insert
+            event:[
+              # { edit: Clear }
+              { edit: InsertString,
+                value: "nvim (fd -t f | sk)"
+
+              }
+              { send: Enter }
+              ]
+      	}]
+
+
+      }
+
+    '';
   };
   programs.carapace = {
     enable = true;
@@ -65,6 +119,8 @@ in {
     enableCompletion = true;
     shellAliases = aliases;
   };
+
+  programs.skim.enable = true;
 
   programs.fzf = {
     enable = true;
