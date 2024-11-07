@@ -22,6 +22,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
@@ -47,7 +49,6 @@
   programs.hyprland = {
     enable = true;
   };
-  programs.river.enable = true;
 
   xdg = {
     portal = {
@@ -144,6 +145,7 @@
     protonup
     vim
     nushell
+    hyprpolkitagent
     ffmpeg
     imagemagick
     neovim
@@ -160,7 +162,7 @@
     gparted
     nix-output-monitor
     nvd
-    lxqt.lxqt-policykit
+    # lxqt.lxqt-policykit
   ];
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
