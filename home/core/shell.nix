@@ -63,6 +63,17 @@ in {
           }
           edit_mode: vi
           keybindings: [
+
+        {
+            name: complete_history_hint
+            modifier: CONTROL
+            keycode: Char_o
+            mode: vi_insert
+            event:[
+              { send: HistoryHintComplete }
+              { send: Enter }
+              ]
+      	}
         {
             name: change_dir_with_fzf
             modifier: ALT
