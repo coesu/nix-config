@@ -25,6 +25,7 @@
     hyprpaper
     hyprlock
     hyprpicker
+    hyprpolkitagent
 
     lm_sensors
     sassc
@@ -40,6 +41,7 @@
     swappy
     grim
     slurp
+    skim
     xdragon
 
     zotero
