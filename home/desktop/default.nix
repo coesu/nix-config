@@ -63,7 +63,12 @@
       };
     };
 
-    zathura.enable = true;
+    zathura = {
+      enable = true;
+      extraConfig = ''
+        set selection-clipboard clipboard
+      '';
+    };
     sioyek.enable = true;
     yazi.enable = true;
     ncspot.enable = true;
