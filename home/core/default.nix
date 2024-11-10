@@ -45,7 +45,6 @@
     fastfetch
 
     nodejs
-    python3
     unzip
     zip
     # isort

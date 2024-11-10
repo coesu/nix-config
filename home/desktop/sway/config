@@ -251,9 +251,8 @@ bar {
 
 default_border pixel 2
 smart_borders on
-gaps inner 4
-gaps outer 4
-smart_gaps on
+gaps inner 0
+gaps outer 0
 
 exec nm-applet &
 exec nextcloud &

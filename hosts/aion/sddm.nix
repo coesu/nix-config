@@ -11,10 +11,12 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "${import ../common/sddm-theme.nix {inherit pkgs;}}";
+    theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
     settings = {
-      # Session = "sway.desktop";
-      # User = "lars";
+      Autologin = {
+        Session = "Hyprland.desktop";
+        User = "lars";
+      };
     };
   };
   environment.systemPackages = with pkgs; [
