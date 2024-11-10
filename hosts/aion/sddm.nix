@@ -11,13 +11,9 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
-    settings = {
-      Autologin = {
-        Session = "Hyprland.desktop";
-        User = "lars";
-      };
-    };
+    theme = "${import ../common/sddm-theme.nix {inherit pkgs;}}";
+    autoLogin.enable = true;
+    autoLogin.user = "lars";
   };
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtquickcontrols2

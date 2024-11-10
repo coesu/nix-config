@@ -35,8 +35,8 @@
 
   programs.zsh.enable = true;
 
-  programs.sway.enable = true;
-  programs.sway.wrapperFeatures.gtk = true;
+  # programs.sway.enable = true;
+  # programs.sway.wrapperFeatures.gtk = true;
 
   # services.xserver.windowManager.qtile = {
   #   enable = true;
