@@ -34,9 +34,10 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/wofi";
     recursive = true;
   };
-  home.file.".config/waybar/config" = {
+  home.file.".config/waybar" = {
     enable = true;
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/waybar/config";
+    source = ./waybar;
+    recursive = true;
   };
   home.file.".config/sioyek" = {
     enable = true;
