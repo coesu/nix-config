@@ -56,66 +56,62 @@ in {
     enable = true;
     shellAliases = aliases;
     extraConfig = ''
+      $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .local scripts))
       $env.config = {
           show_banner: false
-          rm: {
-              always_trash: true
-          }
+          rm: { always_trash: true }
           edit_mode: vi
           keybindings: [
+            {
+                name: complete_history_hint
+                modifier: CONTROL
+                keycode: Char_o
+                mode: vi_insert
+                event:[
+                  { send: HistoryHintComplete }
+                  { send: Enter }
+                  ]
+            }
+            {
+                name: change_dir_with_fzf
+                modifier: ALT
+                keycode: Char_c
+                mode: vi_insert
+                event:[
+                  {
+                    edit: InsertString,
+                    value: "cd (fd -t d | sk)"
+                  }
+                  { send: Enter }
+                  ]
+            }
+            {
+                name: select_file_with_fzf
+                modifier: CONTROL
+                keycode: Char_t
+                mode: vi_insert
+                event:[
+                  { edit: InsertString,
+                    value: "(fd -t f | sk)"
 
-        {
-            name: complete_history_hint
-            modifier: CONTROL
-            keycode: Char_o
-            mode: vi_insert
-            event:[
-              { send: HistoryHintComplete }
-              { send: Enter }
-              ]
-      	}
-        {
-            name: change_dir_with_fzf
-            modifier: ALT
-            keycode: Char_c
-            mode: vi_insert
-            event:[
-              # { edit: Clear }
-              { edit: InsertString,
-                value: "cd (fd -t d | sk)"
-
-              }
-              { send: Enter }
-              ]
-      	}
-      	{
-            name: select_file_with_fzf
-            modifier: CONTROL
-            keycode: Char_t
-            mode: vi_insert
-            event:[
-              # { edit: Clear }
-              { edit: InsertString,
-                value: "(fd -t f | sk)"
-
-              }
-              { send: Enter }
-              ]
-      	}
-      	{
-            name: open_file_nvim_sk
-            modifier: CONTROL
-            keycode: Char_e
-            mode: vi_insert
-            event:[
-              # { edit: Clear }
-              { edit: InsertString,
-                value: "nvim (fd -t f | sk)"
-
-              }
-              { send: Enter }
-              ]
-      	}]
+                  }
+                  { send: Enter }
+                  ]
+            }
+            {
+                name: open_file_nvim_sk
+                modifier: CONTROL
+                keycode: Char_e
+                mode: vi_insert
+                event:[
+                  # { edit: Clear }
+                  { edit: InsertString,
+                    value: "nvim (fd -t f | sk)"
+                  }
+                  { send: Enter }
+                  ]
+            }
+          ]
 
 
       }

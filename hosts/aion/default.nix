@@ -5,7 +5,7 @@
 }: {
   imports = [
     ../configuration.nix
-    ./greetd.nix
+    ./sddm.nix
     ./hardware-configuration.nix
   ];
   networking.hostName = "aion";

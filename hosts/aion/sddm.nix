@@ -12,10 +12,8 @@
     enable = true;
     wayland.enable = true;
     theme = "${import ../common/sddm-theme.nix {inherit pkgs;}}";
-    settings = {
-      # Session = "sway.desktop";
-      # User = "lars";
-    };
+    autoLogin.enable = true;
+    autoLogin.user = "lars";
   };
   environment.systemPackages = with pkgs; [
     libsForQt5.qt5.qtquickcontrols2
