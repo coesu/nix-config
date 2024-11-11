@@ -132,8 +132,9 @@
       "networkmanager"
       "docker"
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.bashInteractive;
     packages = with pkgs; [
+      nushell
       tree
       zsh
       alacritty
@@ -162,6 +163,7 @@
     gparted
     nix-output-monitor
     nvd
+    gnumake
     # lxqt.lxqt-policykit
   ];
   nix.settings = {

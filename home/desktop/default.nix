@@ -49,23 +49,25 @@
     recursive = true;
   };
   programs = {
-    alacritty = {
-      enable = true;
-      settings = {
-        env.TERM = "xterm-256color";
-        keyboard.bindings = [
-          {
-            key = "I";
-            mods = "Control";
-            chars = "\\u0015";
-          }
-        ];
-      };
-    };
+    # alacritty = {
+    #   enable = true;
+    #   settings = {
+    #     env.TERM = "xterm-256color";
+    #     keyboard.bindings = [
+    #       {
+    #         key = "I";
+    #         mods = "Control";
+    #         chars = "\\u0015";
+    #       }
+    #     ];
+    #   };
+    # };
     foot = {
       enable = true;
+      server.enable = true;
       settings = {
         text-bindings = {"\\x15" = "Control+i";};
+        main.shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
       };
     };
 
