@@ -111,6 +111,19 @@ in {
                   { send: Enter }
                   ]
             }
+            {
+                name: tmux-sessionizer
+                modifier: CONTROL
+                keycode: Char_f
+                mode: vi_insert
+                event:[
+                  # { edit: Clear }
+                  { edit: InsertString,
+                    value: "tmux-sessionizer"
+                  }
+                  { send: Enter }
+                  ]
+            }
           ]
 
 

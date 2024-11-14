@@ -7,10 +7,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    # ags = {
+    #   url = "github:Aylur/ags";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,8 +24,14 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # };
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -33,7 +40,7 @@
     self,
     nixpkgs,
     home-manager,
-    nixos-cosmic,
+    hyprpanel,
     ...
   }: let
     forAllSystems = nixpkgs.lib.genAttrs [
@@ -72,6 +79,7 @@
             inherit inputs;
           };
         }
+        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         # (import ./overlays)
       ];
     };
@@ -94,13 +102,6 @@
             inherit inputs;
           };
         }
-        {
-          nix.settings = {
-            substituters = ["https://cosmic.cachix.org/"];
-            trusted-public-keys = ["cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="];
-          };
-        }
-        # nixos-cosmic.nixosModules.default
         # (import ./overlays)
       ];
     };

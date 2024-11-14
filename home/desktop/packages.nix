@@ -19,8 +19,7 @@
     texliveFull
     gimp
 
-    oath-toolkit
-
+    # hyprpanel
     hypridle
     hyprpaper
     hyprlock
