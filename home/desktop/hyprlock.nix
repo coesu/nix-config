@@ -1,11 +1,13 @@
 {
   config,
   inputs,
+  lib,
   pkgs,
   ...
 }: let
   variant = "dark";
 in {
+  stylix.targets.hyprlock.enable = false;
   programs.hyprlock = {
     enable = true;
 
@@ -16,7 +18,7 @@ in {
         no_fade_in = true;
       };
 
-      background = [
+      background = lib.mkDefault [
         {
           monitor = "";
           path = "~/nix-config/home/gruv-estimate.jpg";
