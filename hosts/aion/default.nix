@@ -23,7 +23,7 @@
     };
     rocmOverrideGfx = "10.3.0";
   };
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
 
@@ -32,23 +32,7 @@
     extraGroups = ["video" "render"];
   };
 
-  # Add ROCm packages to system environment
-  environment.systemPackages = with pkgs; [
-    rocmPackages.clang-ocl
-    rocmPackages.hipcc
-    rocmPackages.hipblas
-    rocmPackages.rocrand
-    rocmPackages.rocsparse
-    rocmPackages.rocm-cmake
-    rocmPackages.rocm-device-libs
-    cmake
-    gcc
-  ];
-
-  # Set necessary environment variables
   environment.variables = {
-    HSA_OVERRIDE_GFX_VERSION = "10.3.0"; # Adjust based on your GPU
-    HIP_PLATFORM = "amd";
     PATH = ["/run/current-system/sw/bin"];
   };
 }

@@ -6,6 +6,6 @@
   ...
 }: {
   nixpkgs.overlays = [
-    inputs.hyprpanel.overlay
+    inputs.hyprpanel.overlay."x86_64-linux"
   ];
 }

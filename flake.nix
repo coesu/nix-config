@@ -8,10 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-    # ags = {
-    #   url = "github:Aylur/ags";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,29 +20,19 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixos-cosmic = {
-    #   url = "github:lilyinstarlight/nixos-cosmic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    # };
-
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
-    hyprpanel,
     ...
   }: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
-      #"aarch64-darwin"
+      # "aarch64-darwin"
     ];
+    system = "x86_64-linux";
   in {
     devShells = forAllSystems (
       system: let
@@ -61,8 +47,9 @@
     );
 
     nixosConfigurations.aion = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      # system = "x86_64-linux";
       specialArgs = {
+        inherit system;
         inherit inputs;
       };
       modules = [
@@ -79,7 +66,6 @@
             inherit inputs;
           };
         }
-        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         # (import ./overlays)
       ];
     };
