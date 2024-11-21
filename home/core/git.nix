@@ -17,6 +17,8 @@
     ignores = [
       ".direnv"
       "result"
+      ".CondaPkg"
+      ".env"
     ];
   };
 }
