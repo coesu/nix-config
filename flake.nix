@@ -88,7 +88,6 @@
             inherit inputs;
           };
         }
-        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         # (import ./overlays)
       ];
     };

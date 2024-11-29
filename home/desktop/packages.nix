@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     thunderbird
 
+    onlyoffice-bin
     chromium
     discord-screenaudio
     signal-desktop
@@ -18,6 +19,8 @@
     anki-bin
     texliveFull
     gimp
+
+    julia
 
     hypridle
     hyprpaper

@@ -50,13 +50,11 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		local servers = {
-			clangd = {},
-		}
-		local lspconfig = require("lspconfig")
-		for server, opts in pairs(servers) do
-			lspconfig[server].setup({ capabilities = capabilities })
-		end
+		-- local servers = {}
+		-- local lspconfig = require("lspconfig")
+		-- for server, opts in pairs(servers) do
+		-- 	lspconfig[server].setup({ capabilities = capabilities })
+		-- end
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -92,23 +90,6 @@ return {
 						},
 					})
 				end,
-				-- ["clangd"] = function()
-				-- 	local lspconfig = require("lspconfig")
-				-- 	lspconfig.clangd.setup({
-				-- 		capabilities = capabilities,
-				-- 		-- cmd = { "clangd", "--offset-encoding=utf-16" },
-				-- 		cmd = {
-				-- 			"clangd",
-				-- 			"--background-index",
-				-- 			"--clang-tidy",
-				-- 			"--header-insertion=iwyu",
-				-- 			"--completion-style=detailed",
-				-- 			"--function-arg-placeholders",
-				-- 			"--fallback-style=llvm",
-				-- 			"--offset-encoding=utf-16",
-				-- 		},
-				-- 	})
-				-- end,
 				-- ["rust_analyzer"] = function()
 				-- 	local lspconfig = require("lspconfig")
 				-- 	lspconfig.rust_analyzer.setup({
@@ -123,6 +104,20 @@ return {
 				-- 		},
 				-- 	})
 				-- end,
+				["julials"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.julials.setup({
+						on_new_config = function(new_config, _)
+							local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
+							if require("lspconfig").util.path.is_file(julia) then
+								vim.notify("Hello! from julials")
+								new_config.cmd[1] = julia
+							else
+								vim.notify("Hello! from julials with error")
+							end
+						end,
+					})
+				end,
 			},
 		})
 	end,
