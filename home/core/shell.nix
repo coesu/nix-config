@@ -57,6 +57,7 @@ in {
     shellAliases = aliases;
     extraConfig = ''
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .local scripts))
+      $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .cargo bin))
       $env.config = {
           show_banner: false
           rm: { always_trash: true }
