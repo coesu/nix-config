@@ -8,10 +8,8 @@
     ./anyrun.nix
     ./gtk.nix
     ./hypridle.nix
-    # ./hyprland.nix
     ./hyprlock.nix
     inputs.anyrun.homeManagerModules.default
-    # inputs.ags.homeManagerModules.default
     ./packages.nix
     ./scripts.nix
     ./wlogout.nix
@@ -23,32 +21,37 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/sway";
     recursive = true;
   };
+
   home.file.".config/hypr" = {
     enable = true;
     recursive = true;
     source = ./hypr;
   };
-  # home.file.".config/hypr/hyprpaper.conf".enable = false;
+
   home.file.".config/wofi" = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/wofi";
     recursive = true;
   };
+
   home.file.".config/waybar" = {
     enable = true;
     source = ./waybar;
     recursive = true;
   };
+
   home.file.".config/sioyek" = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/sioyek";
     recursive = true;
   };
+
   home.file.".config/swappy" = {
     enable = true;
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/desktop/swappy";
     recursive = true;
   };
+
   programs = {
     alacritty = {
       enable = true;
@@ -63,6 +66,7 @@
         ];
       };
     };
+
     foot = {
       enable = true;
       server.enable = true;
@@ -71,6 +75,7 @@
         main.shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
       };
     };
+
     kitty = {
       enable = true;
       extraConfig = ''
@@ -87,6 +92,7 @@
         set selection-clipboard clipboard
       '';
     };
+
     sioyek.enable = true;
     yazi.enable = true;
     ncspot.enable = true;
@@ -98,6 +104,7 @@
       enable = true;
       defaultTimeout = 5000;
     };
+
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
   };
