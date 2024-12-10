@@ -3,14 +3,17 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		-- "hrsh7th/cmp-nvim-lsp",
-		-- "hrsh7th/cmp-buffer",
-		-- "hrsh7th/cmp-path",
-		-- "hrsh7th/cmp-cmdline",
-		-- "hrsh7th/nvim-cmp",
-		-- "L3MON4D3/LuaSnip",
-		-- "saadparwaiz1/cmp_luasnip",
+		"Saghen/blink.cmp",
 		{ "j-hui/fidget.nvim", opts = {} },
+		{
+			"folke/lazydev.nvim",
+			ft = "lua",
+			opts = {
+				library = {
+					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				},
+			},
+		},
 	},
 
 	config = function()
@@ -29,7 +32,6 @@ return {
 				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-				map("K", vim.lsp.buf.hover, "Hover Documentation")
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -48,13 +50,7 @@ return {
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
-		-- local servers = {}
-		-- local lspconfig = require("lspconfig")
-		-- for server, opts in pairs(servers) do
-		-- 	lspconfig[server].setup({ capabilities = capabilities })
-		-- end
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -66,51 +62,13 @@ return {
 					})
 				end,
 
-				["lua_ls"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.lua_ls.setup({
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								diagnostics = {
-									globals = {
-										"vim",
-										"it",
-										"describe",
-										"before_each",
-										"after_each",
-										"s",
-										"fmt",
-										"fmta",
-										"d",
-										"i",
-									},
-								},
-							},
-						},
-					})
-				end,
-				-- ["rust_analyzer"] = function()
-				-- 	local lspconfig = require("lspconfig")
-				-- 	lspconfig.rust_analyzer.setup({
-				-- 		capabilities = capabilities,
-				-- 		settings = {
-				-- 			cargo = {
-				-- 				allFeatures = true,
-				-- 			},
-				-- 			checkOnSave = {
-				-- 				command = "clippy",
-				-- 			},
-				-- 		},
-				-- 	})
-				-- end,
 				["julials"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.julials.setup({
 						on_new_config = function(new_config, _)
 							local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
 							if require("lspconfig").util.path.is_file(julia) then
-								vim.notify("Hello! from julials")
+								vim.notify("Hello from julials")
 								new_config.cmd[1] = julia
 							else
 								vim.notify("Hello! from julials with error")
