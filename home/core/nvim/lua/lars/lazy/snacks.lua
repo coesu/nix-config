@@ -14,6 +14,8 @@ return {
 			quickfile = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
+			indend = { enabled = true },
+			input = { enabled = true },
 			styles = {
 				notification = {
 					wo = { wrap = true }, -- Wrap notifications
@@ -21,34 +23,6 @@ return {
 			},
 		},
 		keys = {
-			{
-				"<leader>.",
-				function()
-					Snacks.scratch()
-				end,
-				desc = "Toggle Scratch Buffer",
-			},
-			{
-				"<leader>S",
-				function()
-					Snacks.scratch.select()
-				end,
-				desc = "Select Scratch Buffer",
-			},
-			{
-				"<leader>n",
-				function()
-					Snacks.notifier.show_history()
-				end,
-				desc = "Notification History",
-			},
-			{
-				"<leader>bd",
-				function()
-					Snacks.bufdelete()
-				end,
-				desc = "Delete Buffer",
-			},
 			{
 				"<leader>cR",
 				function()
@@ -179,51 +153,3 @@ return {
 		end,
 	},
 }
--- return {
--- 	"folke/noice.nvim",
--- 	event = "VeryLazy",
--- 	opts = {
--- 		-- routes = {
--- 		-- 	{
--- 		-- 		filter = { event = "notify", find = "No information available" },
--- 		-- 		opts = { skip = true },
--- 		-- 	},
--- 		-- },
--- 		-- presets = {
--- 		-- 	lsp_doc_border = true,
--- 		-- },
--- 	},
--- 	dependencies = {
--- 		"MunifTanjim/nui.nvim",
--- 		"rcarriga/nvim-notify",
--- 	},
--- 	config = function()
--- 		require("notify").setup({
--- 			background_colour = "#000000",
--- 		})
--- 		require("noice").setup({
--- 			lsp = {
--- 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
--- 				override = {
--- 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
--- 					["vim.lsp.util.stylize_markdown"] = true,
--- 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
--- 				},
--- 			},
--- 			-- you can enable a preset for easier configuration
--- 			presets = {
--- 				bottom_search = true, -- use a classic bottom cmdline for search
--- 				-- command_palette = true, -- position the cmdline and popupmenu together
--- 				long_message_to_split = true, -- long messages will be sent to a split
--- 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
--- 				lsp_doc_border = false, -- add a border to hover docs and signature help
--- 			},
--- 			routes = {
--- 				{
--- 					view = "notify",
--- 					filter = { event = "msg_showmode" },
--- 				},
--- 			},
--- 		})
--- 	end,
--- }
