@@ -3,13 +3,13 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-ui-select.nvim",
-		-- {
-		-- 	"nvim-telescope/telescope-fzf-native.nvim",
-		-- 	build = "make",
-		-- 	config = function()
-		-- 		require("telescope").load_extension("fzf")
-		-- 	end,
-		-- },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			-- config = function()
+			-- 	require("telescope").load_extension("fzf")
+			-- end,
+		},
 	},
 
 	config = function()
@@ -20,8 +20,7 @@ return {
 			},
 		})
 
-		-- pcall(require("telescope").load_extension, "fzf")
-		-- pcall(require("telescope").load_extension, "ui-select")
+		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("ui-select")
 
 		local builtin = require("telescope.builtin")
@@ -46,5 +45,8 @@ return {
 		vim.keymap.set("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+		vim.keymap.set("n", "<leader>sp", function()
+			builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
+		end, { desc = "Find neovim packages" })
 	end,
 }
