@@ -115,6 +115,13 @@
   };
   services.jack.alsa.enable = true;
 
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   hardware.keyboard.qmk.enable = true;
   hardware.graphics = {
     enable = true;
