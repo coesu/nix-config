@@ -173,7 +173,6 @@
     nvd
     gnumake
     inputs.zen-browser.packages."${system}".specific
-    # lxqt.lxqt-policykit
   ];
   nix.settings = {
     substituters = [
