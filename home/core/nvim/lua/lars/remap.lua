@@ -14,8 +14,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Navigate buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
+vim.keymap.set("n", "<S-l>", vim.cmd.bnext, { silent = true })
+vim.keymap.set("n", "<S-h>", vim.cmd.bprevious, { silent = true })
 
 -- Splits
 vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "split" })
