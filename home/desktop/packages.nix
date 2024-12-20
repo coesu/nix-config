@@ -14,13 +14,11 @@
     whatsapp-for-linux
     mattermost-desktop
     obsidian
-    # neovide
+    neovide
     nextcloud-client
     anki-bin
     texliveFull
     gimp
-
-    julia
 
     hypridle
     hyprpaper
