@@ -173,6 +173,7 @@
     nvd
     gnumake
     inputs.zen-browser.packages."${system}".specific
+    inputs.ghostty.packages."${system}".default
   ];
   nix.settings = {
     substituters = [
