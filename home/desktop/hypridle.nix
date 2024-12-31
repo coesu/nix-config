@@ -13,10 +13,8 @@
     fi
   '';
 
-  brillo = lib.getExe pkgs.brillo;
-
   # timeout after which DPMS kicks in
-  timeout = 1500;
+  timeout = 600;
 in {
   # screen idle
   services.hypridle = {
@@ -30,20 +28,12 @@ in {
 
       listener = [
         {
-          timeout = timeout - 10;
-          # save the current brightness and dim the screen over a period of
-          # 1 second
-          on-timeout = "${brillo} -O; ${brillo} -u 1000000 -S 10";
-          # brighten the screen over a period of 500ms to the saved value
-          on-resume = "${brillo} -I -u 500000";
-        }
-        {
           inherit timeout;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
         {
-          timeout = timeout + 10;
+          timeout = timeout + 600;
           on-timeout = suspendScript.outPath;
         }
       ];
