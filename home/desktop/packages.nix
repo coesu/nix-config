@@ -7,6 +7,8 @@
   home.packages = with pkgs; [
     thunderbird
 
+    argc
+
     onlyoffice-bin
     chromium
     discord-screenaudio
@@ -44,6 +46,8 @@
     xdragon
 
     zotero
+
+    julia
 
     ausweisapp
     qalculate-gtk
