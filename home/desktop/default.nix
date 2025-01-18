@@ -52,6 +52,8 @@
     recursive = true;
   };
 
+  # wayland.windowManager.hyprland.systemd.enable = false;
+
   programs = {
     alacritty = {
       enable = true;
@@ -107,5 +109,11 @@
 
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
+  };
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = ["graphical-session-pre.target"];
+    };
   };
 }

@@ -18,6 +18,11 @@
     # source = ./tmux.conf;
   };
 
+  home.file.".config/helix" = {
+    enable = true;
+    recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home/core/helix";
+  };
   home.file.".config/nvim" = {
     enable = true;
     recursive = true;
