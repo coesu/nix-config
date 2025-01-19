@@ -17,9 +17,7 @@
       inherit
         (pkgs)
         # Required for pre-commit hook 'nixpkgs-fmt' only on Darwin
-        
         # REF: <https://discourse.nixos.org/t/nix-shell-rust-hello-world-ld-linkage-issue/17381/4>
-        
         libiconv
         nix
         home-manager
@@ -31,6 +29,7 @@
         age
         ssh-to-age
         sops
+        lua-language-server
         ;
     };
   };
