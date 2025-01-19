@@ -18,16 +18,6 @@
     # source = ./tmux.conf;
   };
 
-  programs.neovim = {
-    extraPackages = with pkgs; [
-      pyright
-      rust-analyzer
-
-      lua-language-server
-      stylua
-    ];
-  };
-
   home.file.".config/nvim" = {
     enable = true;
     recursive = true;
@@ -37,12 +27,18 @@
 
   programs.btop.enable = true;
   home.packages = with pkgs; [
+    #neovim stuff
+    pyright
+    rust-analyzer
+
+    lua-language-server
+    stylua
+    ruff
+
     tldr
     fd
     tmux
     zellij
-    neovim
-    eza
     lazygit
     ttyper
     du-dust
@@ -57,12 +53,6 @@
     nodejs
     unzip
     zip
-    # isort
-    # python312Packages.jedi-language-server
     alejandra
-    # lua-language-server
-    # luajitPackages.jsregexp
-    # ruff
-    # stylua
   ];
 }
