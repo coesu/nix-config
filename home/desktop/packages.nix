@@ -7,7 +7,7 @@
   home.packages = with pkgs; [
     thunderbird
 
-    argc
+    pyright
 
     onlyoffice-bin
     chromium
