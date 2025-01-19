@@ -29,7 +29,6 @@
         age
         ssh-to-age
         sops
-        lua-language-server
         ;
     };
   };
