@@ -127,7 +127,7 @@
   hardware.graphics = {
     enable = true;
   };
-  services.xserver.videoDrivers = ["amdgpu"];
+  # services.xserver.videoDrivers = ["amdgpu"];
 
   programs.nix-ld.enable = true;
 
