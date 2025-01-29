@@ -47,8 +47,6 @@
 
     zotero
 
-    julia
-
     ausweisapp
     qalculate-gtk
   ];

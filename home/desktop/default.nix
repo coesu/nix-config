@@ -13,6 +13,7 @@
     ./packages.nix
     ./scripts.nix
     ./wlogout.nix
+    ./scientific-fhs.nix
     ./xdg.nix
   ];
 

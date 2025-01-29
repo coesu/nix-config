@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +21,7 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    scientific-fhs.url = "github:coesu/scientific-fhs";
   };
 
   outputs = inputs @ {
@@ -66,7 +68,7 @@
             inherit inputs;
           };
         }
-        # (import ./overlays)
+        (import ./overlays)
       ];
     };
     nixosConfigurations.nixl = nixpkgs.lib.nixosSystem {
@@ -88,7 +90,7 @@
             inherit inputs;
           };
         }
-        # (import ./overlays)
+        (import ./overlays)
       ];
     };
     homeConfigurations.lars = home-manager.lib.homeManagerConfiguration {
