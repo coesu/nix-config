@@ -174,6 +174,7 @@
     nvd
     gnumake
     inputs.zen-browser.packages."${system}".specific
+    devenv
   ];
   nix.settings = {
     substituters = [
