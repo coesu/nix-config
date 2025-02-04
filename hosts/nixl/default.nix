@@ -10,6 +10,10 @@
   ];
   networking.hostName = "nixl";
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.stable.ollama;
+  };
   # power management for laptop
   services.tlp.enable = true;
   # services.desktopManager.cosmic.enable = true;
