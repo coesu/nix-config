@@ -38,5 +38,5 @@ nvim-clean:
 
 git-flake:
   nix flake update
-  git add flake.lock && git commit -m 'updates' && git push
+  git add flake.lock && git commit -m 'flake update' && git push
   sudo nixos-rebuild switch --flake .
