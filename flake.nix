@@ -78,7 +78,17 @@
       };
       modules = [
         ./hosts/bob
-	inputs.stylix.nixosModules.stylix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+
+          home-manager.users.lars = import ./home;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+        }
         (import ./overlays)
       ];
     };
