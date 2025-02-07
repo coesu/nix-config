@@ -4,16 +4,17 @@
   ...
 }: {
   imports = [
-    ../configuration.nix
+    ../common
     ./hardware-configuration.nix
   ];
   networking.hostName = "bob";
 
   virtualisation.docker.enable = true;
 
+  essentials.enable = true;
+  user-lars.enable = true;
+  nix-settings.enable = true;
+  ssh.enable = true;
 
-  # Add user to necessary groups
-  users.users.lars = {
-    extraGroups = ["video" "render"];
-  };
+  system.stateVersion = "24.11"; # Did you read the comment?
 }

@@ -1,21 +1,30 @@
 {
-  config,
+  lib,
   pkgs,
+  config,
   ...
 }: {
   imports = [
-    ../configuration.nix
-    ./sddm.nix
     ./hardware-configuration.nix
+    ../common
   ];
   networking.hostName = "nixl";
 
-  services.ollama = {
-    enable = true;
-    package = pkgs.stable.ollama;
-  };
-  # power management for laptop
-  services.tlp.enable = true;
-  # services.desktopManager.cosmic.enable = true;
-  # services.displayManager.cosmic-greeter.enable = true;
+  virtualisation.docker.enable = true;
+
+  desktop.enable = true;
+  essentials.enable = true;
+  greetd.enable = false;
+  keyring.enable = true;
+  user-lars.enable = true;
+  nix-settings.enable = true;
+  ollamarocm.enable = false;
+  packages-option.enable = true;
+  sddm.enable = true;
+  sound-option.enable = true;
+  ssh.enable = true;
+  steam.enable = true;
+  stylix-option.enable = true;
+
+  system.stateVersion = "24.05";
 }
