@@ -53,8 +53,6 @@
     recursive = true;
   };
 
-  # wayland.windowManager.hyprland.systemd.enable = false;
-
   programs = {
     alacritty = {
       enable = true;
@@ -89,6 +87,11 @@
       };
     };
 
+    ghostty = {
+      enable = true;
+      settings.command = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
+    };
+
     zathura = {
       enable = true;
       extraConfig = ''
@@ -107,10 +110,10 @@
       enable = true;
       defaultTimeout = 5000;
     };
-
     network-manager-applet.enable = true;
     blueman-applet.enable = true;
   };
+
   systemd.user.targets.tray = {
     Unit = {
       Description = "Home Manager System Tray";
