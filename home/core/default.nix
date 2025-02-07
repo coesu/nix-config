@@ -30,6 +30,8 @@
     #neovim stuff
     pyright
     rust-analyzer
+    neovim
+    vim
 
     lua-language-server
     stylua
