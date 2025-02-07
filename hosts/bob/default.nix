@@ -15,7 +15,7 @@
   user-lars.enable = true;
   nix-settings.enable = true;
   ssh.enable = true;
-  ollama-cuda.enable = true;
+  ollamacuda.enable = true;
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
