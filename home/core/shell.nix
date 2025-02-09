@@ -59,6 +59,8 @@ in {
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .local scripts))
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .cargo bin))
       $env.PATH = ($env.PATH | split row (char esep) | append "/opt/rocm/bin")
+      let anthropic_api = (open "/home/lars/anthropic-api" | str trim)
+      $env.ANTHROPIC_API_KEY = $anthropic_api
       $env.config = {
           show_banner: false
           rm: { always_trash: true }

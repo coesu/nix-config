@@ -4,7 +4,15 @@ return {
 	lazy = false,
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		-- add any opts here
+		-- auto_suggestions_provider = "copilot",
+		-- copilot = { model = "claude-3.5-sonnet" },
+		file_selector = {
+			provider = "telescope",
+			provider_opts = {},
+		}, -- add any opts here
+		behaviour = {
+			auto_suggestions = true, -- Experimental stage
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
@@ -15,7 +23,8 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		--- The below dependencies are optional,
-		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+		"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+		"echasnovski/mini.icons", -- or echasnovski/mini.icons
 		-- "zbirenbaum/copilot.lua", -- for providers='copilot'
 		{
 			-- support for image pasting

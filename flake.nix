@@ -48,6 +48,7 @@
       system: nixpkgs.legacyPackages.${system}.alejandra
     );
 
+    # TODO fix this copy paste stuff
     nixosConfigurations.aion = nixpkgs.lib.nixosSystem {
       # system = "x86_64-linux";
       specialArgs = {

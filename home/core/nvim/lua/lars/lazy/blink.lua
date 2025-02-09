@@ -1,8 +1,20 @@
 return {
 	{
+		"saghen/blink.compat",
+		lazy = true,
+		opts = {},
+		config = function()
+			-- monkeypatch cmp.ConfirmBehavior for Avante
+			require("cmp").ConfirmBehavior = {
+				Insert = "insert",
+				Replace = "replace",
+			}
+		end,
+	},
+	{
 		"saghen/blink.cmp",
 		lazy = false,
-		dependencies = "rafamadriz/friendly-snippets",
+		dependencies = { "rafamadriz/friendly-snippets", "yetone/avante.nvim" },
 
 		version = "v0.*",
 
@@ -29,14 +41,42 @@ return {
 			},
 
 			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				default = {
+					"lazydev",
+					"lsp",
+					"path",
+					"snippets",
+					"buffer",
+					"avante_commands",
+					"avante_mentions",
+					"avante_files",
+				},
 				providers = {
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
 						score_offset = 100,
 					},
+					avante_commands = {
+						name = "avante_commands",
+						module = "blink.compat.source",
+						score_offset = 90, -- show at a higher priority than lsp
+						opts = {},
+					},
+					avante_files = {
+						name = "avante_commands",
+						module = "blink.compat.source",
+						score_offset = 100, -- show at a higher priority than lsp
+						opts = {},
+					},
+					avante_mentions = {
+						name = "avante_mentions",
+						module = "blink.compat.source",
+						score_offset = 1000, -- show at a higher priority than lsp
+						opts = {},
+					},
 				},
+				-- compat = { "avante_commands", "avante_mentions", "avante_files" },
 			},
 
 			completion = { accept = { auto_brackets = { enabled = true } } },
