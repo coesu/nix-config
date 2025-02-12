@@ -19,7 +19,7 @@
 {
   gtk = {
     enable = true;
-    iconTheme.package = pkgs.gruvbox-plus-icons;
+    iconTheme.package = pkgs.stable.gruvbox-plus-icons;
     iconTheme.name = "Gruvbox-Plus-Dark";
   };
   # qt = {
