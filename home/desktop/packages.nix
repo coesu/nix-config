@@ -11,7 +11,7 @@
 
     onlyoffice-bin
     chromium
-    discord-screenaudio
+    discord
     signal-desktop
     whatsapp-for-linux
     mattermost-desktop
