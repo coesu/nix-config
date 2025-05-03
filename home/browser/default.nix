@@ -4,6 +4,7 @@
   inputs,
   ...
 }: {
+  stylix.targets.firefox.profileNames = ["test"];
   programs.firefox = {
     enable = true;
     profiles.test = {

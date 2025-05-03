@@ -9,7 +9,7 @@
 
     pyright
 
-    onlyoffice-bin
+    libreoffice
     chromium
     discord
     signal-desktop
@@ -34,6 +34,7 @@
     waybar
     playerctl
     pamixer
+    pavucontrol
     wofi
     wl-clipboard
     imv
