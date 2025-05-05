@@ -5,7 +5,7 @@ def focus_or_open_file [] {
     let target_dir2 = $"/home/lars/Zotero/storage"
 
     let open_files = hyprctl clients -j | from json | each {|client|
-        if $client.title != "" and $client.class == "org.pwmt.zathura" {
+        if $client.title != "" and $client.class == "sioyek" {
             let file_name = ($client.title | split row "/" | last)
             {title: $file_name, address: $"address:($client.address)"}
         }
@@ -26,7 +26,7 @@ def focus_or_open_file [] {
             hyprctl dispatch focuswindow $selected.address
         } else {
             print $"Opening file: ($selected.full_path)"
-            zathura $"($selected.full_path)"
+            xdg-open $"($selected.full_path)"
         }
     }
 }
