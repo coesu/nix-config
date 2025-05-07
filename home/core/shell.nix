@@ -42,7 +42,7 @@ in {
 
     shellAliases = aliases;
 
-    initExtra = ''
+    initContent = ''
       setopt extended_glob null_glob
       set -o vi
       bindkey '^o' autosuggest-execute
