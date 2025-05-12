@@ -62,6 +62,7 @@ in {
       let anthropic_api = (open "/home/lars/anthropic-api" | str trim)
       $env.ANTHROPIC_API_KEY = $anthropic_api
       $env.GEMINI_API_KEY = (open "/home/lars/gemini-api" | str trim)
+      $env.OPENAI_API_KEY = (open "/home/lars/openai-api" | str trim)
       $env.config = {
           show_banner: false
           rm: { always_trash: true }
