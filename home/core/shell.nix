@@ -42,7 +42,7 @@ in {
 
     shellAliases = aliases;
 
-    initExtra = ''
+    initContent = ''
       setopt extended_glob null_glob
       set -o vi
       bindkey '^o' autosuggest-execute
@@ -59,6 +59,10 @@ in {
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .local scripts))
       $env.PATH = ($env.PATH | split row (char esep) | append ($env.HOME | path join .cargo bin))
       $env.PATH = ($env.PATH | split row (char esep) | append "/opt/rocm/bin")
+      let anthropic_api = (open "/home/lars/anthropic-api" | str trim)
+      $env.ANTHROPIC_API_KEY = $anthropic_api
+      $env.GEMINI_API_KEY = (open "/home/lars/gemini-api" | str trim)
+      $env.OPENAI_API_KEY = (open "/home/lars/openai-api" | str trim)
       $env.config = {
           show_banner: false
           rm: { always_trash: true }

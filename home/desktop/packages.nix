@@ -9,9 +9,9 @@
 
     pyright
 
-    onlyoffice-bin
+    libreoffice
     chromium
-    discord-screenaudio
+    discord
     signal-desktop
     whatsapp-for-linux
     mattermost-desktop
@@ -34,6 +34,7 @@
     waybar
     playerctl
     pamixer
+    pavucontrol
     wofi
     wl-clipboard
     imv

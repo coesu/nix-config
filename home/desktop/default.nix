@@ -9,7 +9,7 @@
     ./gtk.nix
     ./hypridle.nix
     ./hyprlock.nix
-    inputs.anyrun.homeManagerModules.default
+    # inputs.anyrun.homeManagerModules.default
     ./packages.nix
     ./scripts.nix
     ./wlogout.nix

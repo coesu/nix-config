@@ -10,10 +10,11 @@
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
         rink
-        shell
         translate
+        randr
         stdin
         dictionary
+        websearch
       ];
       x = {
         fraction = 0.5;
@@ -32,7 +33,11 @@
       #window {
         background: transparent;
       }
-
+    '';
+    extraConfigFiles."symbols.ron".text = ''
+      Config(
+        prefix: "s ",
+      )
     '';
   };
 }

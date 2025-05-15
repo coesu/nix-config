@@ -6,7 +6,7 @@ def focus_or_open_file [] {
 
     let open_files = hyprctl clients -j | from json | each {|client|
         if $client.title != "" and $client.class == "sioyek" {
-            let file_name = ($client.title | split row "/" | last)
+            let file_name = $client.title
             {title: $file_name, address: $"address:($client.address)"}
         }
     } | where $it.title != "" | to json
@@ -26,7 +26,7 @@ def focus_or_open_file [] {
             hyprctl dispatch focuswindow $selected.address
         } else {
             print $"Opening file: ($selected.full_path)"
-            xdg-open $"($selected.full_path)"
+            sioyek $"($selected.full_path)"
         }
     }
 }
