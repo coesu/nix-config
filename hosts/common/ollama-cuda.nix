@@ -10,14 +10,14 @@
 
   config = lib.mkIf config.ollamacuda.enable {
     services.xserver.videoDrivers = ["nvidia"];
-    services.ollama = {
-      enable = true;
-      acceleration = "cuda";
-      environmentVariables = {
-        OLLAMA_LLM_LIBRARY = "cuda";
-        LD_LIBRARY_PATH = "run/opengl-driver/lib";
-      };
-    };
+    # services.ollama = {
+    #   enable = true;
+    #   acceleration = "cuda";
+    #   environmentVariables = {
+    #     OLLAMA_LLM_LIBRARY = "cuda";
+    #     LD_LIBRARY_PATH = "run/opengl-driver/lib";
+    #   };
+    # };
     nix.settings = {
       substituters = [
         "https://cuda-maintainers.cachix.org"

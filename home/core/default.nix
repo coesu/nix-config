@@ -10,6 +10,7 @@
     ./git.nix
     ./shell.nix
     ./zoxide.nix
+    ./scientific-fhs.nix
   ];
 
   home.file.".tmux.conf" = {

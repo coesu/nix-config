@@ -79,6 +79,7 @@
       };
       modules = [
         ./hosts/bob
+        inputs.stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
