@@ -12,6 +12,7 @@
     ./lars.nix
     ./nix-settings.nix
     ./ollama-rocm.nix
+    ./ollama-cuda.nix
     ./packages.nix
     ./sddm.nix
     ./sound.nix
