@@ -380,7 +380,7 @@ return {
 	-- BRA
 	s(
 		{ trig = "([^%a])bra", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\langle <> |", {
+		fmta("<>\\Bra{<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -391,7 +391,7 @@ return {
 	-- KET
 	s(
 		{ trig = "([^%a])ket", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>| <> \\rangle", {
+		fmta("<>\\Ket{<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
@@ -402,12 +402,11 @@ return {
 	-- BRAKET
 	s(
 		{ trig = "([^%a])brk", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-		fmta("<>\\left\\langle <> \\middle| <> \\right\\rangle", {
+		fmta("<>\\Braket{<>}", {
 			f(function(_, snip)
 				return snip.captures[1]
 			end),
 			i(1),
-			i(2),
 		}),
 		{ condition = tex.in_mathzone }
 	),
