@@ -60,6 +60,7 @@ return {
 					semanticTokensProvider = vim.NIL,
 				},
 			},
+			texlab = true,
 			rust_analyzer = true,
 			-- julials = true,
 			julials = {

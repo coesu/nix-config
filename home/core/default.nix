@@ -32,6 +32,7 @@
     rust-analyzer
     neovim
     vim
+    texlab
 
     lua-language-server
     stylua
