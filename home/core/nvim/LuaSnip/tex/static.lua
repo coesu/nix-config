@@ -9,10 +9,10 @@ tex.in_mathzone = require("lars/detect-mathzone").in_mathzone
 tex.in_text = function()
 	return not tex.in_mathzone()
 end
--- tex.in_tikz = function()
--- 	local is_inside = vim.fn["vimtex#env#is_inside"]("tikzpicture")
--- 	return (is_inside[1] > 0 and is_inside[2] > 0)
--- end
+tex.in_tikz = function()
+	local is_inside = vim.fn["vimtex#env#is_inside"]("tikzpicture")
+	return (is_inside[1] > 0 and is_inside[2] > 0)
+end
 
 -- Return snippet tables
 return {
