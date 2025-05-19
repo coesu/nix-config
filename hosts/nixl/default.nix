@@ -7,7 +7,6 @@
   imports = [
     ./hardware-configuration.nix
     ../common
-    ./sddm.nix
   ];
   networking.hostName = "nixl";
 

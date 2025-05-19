@@ -188,7 +188,7 @@ return {
 		{ trig = "drr", snippetType = "autosnippet" },
 		fmta(
 			[[
-            \draw (A<>.east) -- +(-0.5, 0);
+            \draw (A<>.east) -- +(0.5, 0);
         ]],
 			{ i(1) }
 		),
@@ -198,7 +198,7 @@ return {
 		{ trig = "drl", snippetType = "autosnippet" },
 		fmta(
 			[[
-            \draw (A<>.west) -- +(0.5, 0);
+            \draw (A<>.west) -- +(-0.5, 0);
         ]],
 			{ i(1) }
 		),

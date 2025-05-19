@@ -13,8 +13,8 @@
     wayland.enable = true;
     theme = "${import ../common/sddm-theme.nix {inherit pkgs;}}";
     settings = {
-      # Session = "sway.desktop";
-      # User = "lars";
+      Session = "Hyprland.desktop";
+      User = "lars";
     };
   };
   environment.systemPackages = with pkgs; [
