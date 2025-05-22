@@ -29,6 +29,7 @@ return {
 		),
 		{ condition = line_begin }
 	),
+
 	-- FRAME
 	s(
 		{ trig = "nf", snippetType = "autosnippet" },
