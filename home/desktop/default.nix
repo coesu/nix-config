@@ -89,6 +89,7 @@
     ghostty = {
       enable = true;
       settings.command = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
+      settings.gtk-single-instance = true;
     };
 
     zathura = {

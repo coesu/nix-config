@@ -14,6 +14,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		lazy = false,
+		-- dependencies = { "rafamadriz/friendly-snippets", "yetone/avante.nvim", "folke/noice.nvim" },
 		dependencies = { "rafamadriz/friendly-snippets", "yetone/avante.nvim" },
 
 		version = "v0.*",
@@ -80,6 +81,10 @@ return {
 			},
 
 			completion = { accept = { auto_brackets = { enabled = true } } },
+			cmdline = {
+				keymap = { preset = "inherit" },
+				completion = { menu = { auto_show = true }, ghost_text = { enabled = false } },
+			},
 		},
 		opts_extend = { "sources.default" },
 	},
