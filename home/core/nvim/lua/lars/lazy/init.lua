@@ -1,9 +1,10 @@
 return {
-	-- {
-	-- 	"nvim-lua/plenary.nvim",
-	-- 	name = "plenary",
-	-- },
-	-- { "numToStr/Comment.nvim", opts = {} },
-	-- "chrisbra/unicode.vim",
+	{
+		"nvim-lua/plenary.nvim",
+		name = "plenary",
+	},
+	"folke/neodev.nvim",
+	{ "numToStr/Comment.nvim", opts = {} },
+	"simrat39/rust-tools.nvim",
 	"christoomey/vim-tmux-navigator",
 }

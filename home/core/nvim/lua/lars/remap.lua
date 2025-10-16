@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -14,8 +15,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Navigate buffers
-vim.keymap.set("n", "<S-l>", vim.cmd.bnext, { silent = true })
-vim.keymap.set("n", "<S-h>", vim.cmd.bprevious, { silent = true })
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Splits
 vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "split" })
@@ -67,8 +68,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "<leader>r", '<cmd>!tmux send-keys -t 1 "cargo run" Enter<CR><CR>', { buffer = args.buf })
 	end,
 })
-
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })

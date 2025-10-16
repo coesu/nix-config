@@ -5,7 +5,7 @@ return {
 	-- install jsregexp (optional!).
 	build = "make install_jsregexp",
 
-	-- dependencies = { "rafamadriz/friendly-snippets" },
+	dependencies = { "rafamadriz/friendly-snippets" },
 
 	config = function()
 		-- --------------------------------------------- "
@@ -28,65 +28,17 @@ return {
 		-----------------------------------------------
 
 		ls.config.set_config({
+			-- Don't store snippet history for less overhead
 			history = false,
+			-- Allow autotrigger snippets
 			enable_autosnippets = true,
-			override_builtin = true,
-			updateevents = "TextChanged,TextChangedI",
+			-- For equivalent of UltiSnips visual selection
+			-- store_selection_keys = "<Tab>",
+			-- Event on which to check for exiting a snippet's region
 			region_check_events = "InsertEnter",
 			delete_check_events = "InsertLeave",
 		})
-		-- require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
-
-		vim.snippet.expand = ls.lsp_expand
-
-		---@diagnostic disable-next-line: duplicate-set-field
-		vim.snippet.active = function(filter)
-			filter = filter or {}
-			filter.direction = filter.direction or 1
-
-			if filter.direction == 1 then
-				return ls.expand_or_jumpable()
-			else
-				return ls.jumpable(filter.direction)
-			end
-		end
-
-		---@diagnostic disable-next-line: duplicate-set-field
-		vim.snippet.jump = function(direction)
-			if direction == 1 then
-				if ls.expandable() then
-					return ls.expand_or_jump()
-				else
-					return ls.jumpable(1) and ls.jump(1)
-				end
-			else
-				return ls.jumpable(-1) and ls.jump(-1)
-			end
-		end
-
-		vim.snippet.stop = ls.unlink_current
-
-		-- ================================================
-		--      My Configuration
-		-- ================================================
-		-- ls.config.set_config({
-		-- 	history = true,
-		-- 	updateevents = "TextChanged,TextChangedI",
-		-- 	override_builtin = true,
-		-- })
-
-		-- for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
-		-- 	loadfile(ft_path)()
-		-- end
-
-		vim.keymap.set({ "i", "s" }, "<c-u>", function()
-			return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)
-		end, { silent = true, desc = "testy" })
-
-		vim.keymap.set({ "i", "s" }, "<c-b>", function()
-			return vim.snippet.active({ direction = -1 }) and vim.snippet.jump(-1)
-		end, { silent = true, desc = "testy" })
-
-		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
+		-- require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
+		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
 	end,
 }
