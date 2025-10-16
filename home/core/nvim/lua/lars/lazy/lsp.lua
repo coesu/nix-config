@@ -67,6 +67,7 @@ return {
             lspconfig[server].setup(opts)
         end
 
+<<<<<<< HEAD
         -- require("mason").setup()
         -- require("mason-lspconfig").setup({
         -- 	ensure_installed = {
@@ -115,4 +116,55 @@ return {
         -- 	},
         -- })
     end,
+=======
+		local lspconfig = require("lspconfig")
+
+		local servers = {
+			pyright = true,
+			lua_ls = {
+				server_capabilities = {
+					semanticTokensProvider = vim.NIL,
+				},
+			},
+			texlab = true,
+			rust_analyzer = true,
+			-- julials = true,
+			julials = {
+				on_new_config = function(new_config, _)
+					local julia = vim.fn.expand("~/.julia/environments/nvim-lspconfig/bin/julia")
+					new_config.cmd[1] = julia
+					vim.notify("Hello from julials")
+					-- if require("lspconfig").util.path.is_file(julia) then
+					--     vim.notify("Hello from julials")
+					--     new_config.cmd[1] = julia
+					-- else
+					--     vim.notify("Hello! from julials with error")
+					-- end
+				end,
+			},
+		}
+
+		for name, config in pairs(servers) do
+			if config == true then
+				config = {}
+			end
+			config = vim.tbl_deep_extend("force", {}, {
+				capabilities = capabilities,
+			}, config)
+
+			lspconfig[name].setup(config)
+		end
+		vim.diagnostic.config({
+			-- update_in_insert = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+		})
+	end,
+>>>>>>> refs/remotes/origin/main
 }

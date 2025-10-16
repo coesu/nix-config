@@ -19,6 +19,7 @@ return
             <>
         \end{<>}
       ]],
+<<<<<<< HEAD
         {
           i(1),
           d(2, get_visual),
@@ -31,6 +32,22 @@ return
     s({trig="nf", snippetType="autosnippet"},
       fmta(
         [[
+=======
+			{
+				i(1),
+				d(2, get_visual),
+				rep(1),
+			}
+		),
+		{ condition = line_begin }
+	),
+
+	-- FRAME
+	s(
+		{ trig = "nf", snippetType = "autosnippet" },
+		fmta(
+			[[
+>>>>>>> refs/remotes/origin/main
         \begin{frame}{<>}
             <>
         \end{frame}

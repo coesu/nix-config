@@ -19,7 +19,7 @@
         wayland.enable = true;
         theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
       };
-      autoLogin.enable = true;
+      autoLogin.enable = false;
       autoLogin.user = "lars";
     };
     environment.systemPackages = with pkgs; [

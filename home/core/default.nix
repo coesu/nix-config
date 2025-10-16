@@ -33,6 +33,8 @@
     rust-analyzer
     neovim
     vim
+    texlab
+    evil-helix
 
     lua-language-server
     stylua
@@ -45,7 +47,6 @@
     lazygit
     ttyper
     du-dust
-    helix
 
     lua51Packages.lua
     luajitPackages.luarocks

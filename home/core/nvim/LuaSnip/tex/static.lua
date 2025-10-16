@@ -11,6 +11,13 @@ tex.in_tikz = function()
   local is_inside = vim.fn['vimtex#env#is_inside']("tikzpicture")
   return (is_inside[1] > 0 and is_inside[2] > 0)
 end
+<<<<<<< HEAD
+=======
+tex.in_tikz = function()
+	local is_inside = vim.fn["vimtex#env#is_inside"]("tikzpicture")
+	return (is_inside[1] > 0 and is_inside[2] > 0)
+end
+>>>>>>> refs/remotes/origin/main
 
 -- Return snippet tables
 return
